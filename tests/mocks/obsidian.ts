@@ -144,6 +144,8 @@ export async function requestUrl(): Promise<never> {
 
 export function setIcon(): void {}
 
+export const Keymap = { isModEvent: () => false };
+
 export class Plugin {
 	constructor(
 		public app: FakeApp,

@@ -16,6 +16,7 @@ import { WUWA_NOTICE_URL, wuwaSource } from "./sources/wuwa";
 import { wuwaQuestCatalog } from "./sources/wuwaQuests";
 import { formatLocalIso, HOUR, MINUTE } from "./time";
 import { ConfirmModal, ImportCandidate, ImportModal, PeriodicImportModal, QuestImportModal, TaskModal } from "./ui/modals";
+import { TaskTableView, VIEW_TYPE_TABLE } from "./view/TaskTableView";
 import { TodoView, VIEW_TYPE } from "./view/TodoView";
 
 export default class GameTodoPlugin extends Plugin {
@@ -30,10 +31,12 @@ export default class GameTodoPlugin extends Plugin {
 		this.repo = new TaskRepo(this.app, () => this.settings.rootFolder);
 
 		this.registerView(VIEW_TYPE, (leaf) => new TodoView(leaf, this));
+		this.registerView(VIEW_TYPE_TABLE, (leaf) => new TaskTableView(leaf, this));
 		this.addRibbonIcon("swords", "Game ToDo を開く", () => this.activateView());
 		this.addSettingTab(new GameTodoSettingTab(this.app, this));
 
 		this.addCommand({ id: "open-view", name: "ビューを開く", callback: () => this.activateView() });
+		this.addCommand({ id: "open-table", name: "タスク一覧を開く（検索）", callback: () => this.activateTable() });
 		this.addCommand({ id: "new-task", name: "タスクを追加", callback: () => this.openNewTask() });
 		this.addCommand({ id: "import-events", name: "イベントを取り込む", callback: () => this.importEvents() });
 		this.addCommand({ id: "import-quests", name: "任務を取り込む", callback: () => this.importQuests() });
@@ -89,8 +92,10 @@ export default class GameTodoPlugin extends Plugin {
 	refresh(notify: boolean): void {
 		this.tasks = this.repo.loadTasks();
 		this.result = schedule(this.tasks, Date.now(), this.settings.capacity, { horizonDays: this.settings.horizonDays });
-		for (const leaf of this.app.workspace.getLeavesOfType(VIEW_TYPE)) {
-			if (leaf.view instanceof TodoView) leaf.view.render();
+		for (const type of [VIEW_TYPE, VIEW_TYPE_TABLE]) {
+			for (const leaf of this.app.workspace.getLeavesOfType(type)) {
+				if (leaf.view instanceof TodoView || leaf.view instanceof TaskTableView) leaf.view.render();
+			}
 		}
 		if (notify) new Notice(`${this.tasks.length} 件のタスクを再計算しました`);
 	}
@@ -101,6 +106,17 @@ export default class GameTodoPlugin extends Plugin {
 		if (!leaf) {
 			leaf = workspace.getRightLeaf(false) ?? workspace.getLeaf(true);
 			await leaf.setViewState({ type: VIEW_TYPE, active: true });
+		}
+		workspace.revealLeaf(leaf);
+	}
+
+	/** Opens the searchable task table as a tab in the main area. */
+	async activateTable(): Promise<void> {
+		const { workspace } = this.app;
+		let leaf = workspace.getLeavesOfType(VIEW_TYPE_TABLE)[0];
+		if (!leaf) {
+			leaf = workspace.getLeaf("tab");
+			await leaf.setViewState({ type: VIEW_TYPE_TABLE, active: true });
 		}
 		workspace.revealLeaf(leaf);
 	}

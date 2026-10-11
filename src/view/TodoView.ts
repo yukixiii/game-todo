@@ -54,8 +54,10 @@ export class TodoView extends ItemView {
 			this.filter = sel.value as Game | "all";
 			this.render();
 		};
+		this.iconButton(bar, "table", "一覧で検索", () => this.plugin.activateTable());
 		this.iconButton(bar, "plus", "タスクを追加", () => this.plugin.openNewTask());
 		this.iconButton(bar, "download", "イベントを取り込む", () => this.plugin.importEvents());
+		this.iconButton(bar, "scroll-text", "任務を取り込む", () => this.plugin.importQuests());
 		this.iconButton(bar, "refresh-cw", "再計算", () => this.plugin.refresh(true));
 
 		const counts = this.counts(r);
@@ -228,10 +230,11 @@ export class TodoView extends ItemView {
 		meta.push(KIND_LABEL[t.kind]);
 		if (t.deadline != null) meta.push(`期限 ${formatShort(t.deadline)}`);
 		if (pt.state === "active") {
+			const own = t.remaining ?? t.estimate ?? 0;
 			meta.push(
-				pt.totalMinutes !== (t.remaining ?? t.estimate ?? 0)
-					? `前提込み ${formatMinutes(pt.totalMinutes)}`
-					: formatMinutes(pt.totalMinutes),
+				pt.totalMinutes !== own
+					? `${formatMinutes(own)}（前提込み ${formatMinutes(pt.totalMinutes)}）`
+					: formatMinutes(own),
 			);
 			if (!lead && pt.plannedEnd != null) meta.push(`完了予定 ${formatShort(pt.plannedEnd)}`);
 			if (pt.slack != null) meta.push(`余裕 ${formatSpan(pt.slack)}`);
