@@ -80,6 +80,11 @@ export class FakeApp {
 			this.files.set(p, { file, content });
 			return file;
 		},
+		process: async (f: TFile, fn: (content: string) => string) => {
+			const e = this.files.get(f.path)!;
+			e.content = fn(e.content);
+			return e.content;
+		},
 		on: () => ({}),
 	};
 

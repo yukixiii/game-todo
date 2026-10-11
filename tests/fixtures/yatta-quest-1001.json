@@ -1,0 +1,933 @@
+{
+ "response": 200,
+ "data": {
+  "info": {
+   "id": 1001,
+   "type": "aq",
+   "chapterNum": "序章 第一幕",
+   "chapterTitle": "風を捕まえる異邦人",
+   "chapterIcon": "UI_ChapterIcon_Mengde",
+   "chapterImageTitle": "モンド",
+   "route": "The Outlander Who Caught the Wind",
+   "chapterCount": 13
+  },
+  "storyList": {
+   "0": {
+    "id": 351,
+    "info": {
+     "title": "流浪者の足跡",
+     "description": "神があなたの唯一の血縁者を奪い去り、あなたは眠りへと落ちた。目を覚ましたあなたは、一人で旅を始め、そして途中で不思議な仲間「パイモン」と出会い、テイワットでの探索の旅を繰り広げる。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 500
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 225
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 975
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "352": "風物鳥瞰"
+    },
+    "story": {
+     "0": {
+      "id": 35100,
+      "isHidden": false,
+      "title": "パイモンの近くに行く"
+     },
+     "1": {
+      "id": 35101,
+      "isHidden": false,
+      "title": "パイモンについて行く"
+     },
+     "2": {
+      "id": 35102,
+      "isHidden": false,
+      "title": "岩台に登る"
+     },
+     "3": {
+      "id": 35105,
+      "isHidden": false,
+      "title": "崖の下に行く"
+     },
+     "4": {
+      "id": 35106,
+      "isHidden": false,
+      "title": "ワープポイントを開放する"
+     }
+    }
+   },
+   "1": {
+    "id": 352,
+    "info": {
+     "title": "風物鳥瞰",
+     "description": "星落ちの谷から旅が始まり、あなたとパイモンはこの世界を見て回りながら前へ進む。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 500
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 225
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 975
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "353": "異常な力"
+    },
+    "story": {
+     "0": {
+      "id": 35200,
+      "isHidden": false,
+      "title": "前に進む"
+     },
+     "1": {
+      "id": 35201,
+      "isHidden": false,
+      "title": "パイモンの近くに行く"
+     },
+     "2": {
+      "id": 35202,
+      "isHidden": false,
+      "title": "パイモンと会話する"
+     },
+     "3": {
+      "id": 35203,
+      "isHidden": false,
+      "title": "パイモンについて行く"
+     },
+     "4": {
+      "id": 35204,
+      "isHidden": false,
+      "title": "星落としの湖を泳いで渡る"
+     },
+     "5": {
+      "id": 35205,
+      "isHidden": false,
+      "title": "七天神像1をアンロック"
+     }
+    }
+   },
+   "2": {
+    "id": 353,
+    "info": {
+     "title": "異常な力",
+     "description": "旅の途中で、不思議な「七天神像」を発見した。パイモンの提案により、あなたはそれを確かめることにした。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 575
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 250
+     },
+     "201": {
+      "id": 201,
+      "icon": "UI_ItemIcon_201",
+      "type": "item",
+      "rank": 5,
+      "count": 20
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 1100
+     },
+     "108005": {
+      "id": 108005,
+      "icon": "UI_ItemIcon_Recipe_2001",
+      "type": "item",
+      "rank": 1,
+      "count": 10
+     },
+     "108032": {
+      "id": 108032,
+      "icon": "UI_ItemIcon_Recipe_1004",
+      "type": "item",
+      "rank": 2,
+      "count": 10
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "355": "林間の出会い"
+    },
+    "story": {
+     "0": {
+      "id": 35301,
+      "isHidden": false,
+      "title": "パイモンと会話する"
+     },
+     "1": {
+      "id": 35302,
+      "isHidden": false,
+      "title": "元素スキルを発動する"
+     },
+     "2": {
+      "id": 35303,
+      "isHidden": false,
+      "title": "元素スキルを長押しする"
+     },
+     "3": {
+      "id": 35304,
+      "isHidden": false,
+      "title": "元素爆発を発動する"
+     },
+     "4": {
+      "id": 35309,
+      "isHidden": false,
+      "title": "スライムを倒す"
+     },
+     "5": {
+      "id": 35310,
+      "isHidden": false,
+      "title": "スライムを倒す"
+     },
+     "6": {
+      "id": 35311,
+      "isHidden": false,
+      "title": "スライムを倒す"
+     },
+     "7": {
+      "id": 35312,
+      "isHidden": false,
+      "title": "エリアを出ることに失敗巻き戻し"
+     }
+    }
+   },
+   "3": {
+    "id": 355,
+    "info": {
+     "title": "林間の出会い",
+     "description": "意外なことに、七天神像の中にある風元素があなたに共鳴した。そして、あなたたちはテイワット七神の一人、風神から手がかりを探すと決めた。その最初の目的地は風神に守られている都、モンド城である。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 575
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 250
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 1100
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "354": "風と共に来た騎士"
+    },
+    "story": {
+     "0": {
+      "id": 35501,
+      "isHidden": false,
+      "title": "モンドへ行く"
+     },
+     "1": {
+      "id": 35502,
+      "isHidden": false,
+      "title": "森の奥へ進む"
+     },
+     "2": {
+      "id": 35503,
+      "isHidden": false,
+      "title": "パイモンと会話する"
+     },
+     "3": {
+      "id": 35504,
+      "isHidden": false,
+      "title": "パイモンが発見したものを調べる"
+     },
+     "4": {
+      "id": 35505,
+      "isHidden": false,
+      "title": "パイモンと会話する"
+     }
+    }
+   },
+   "4": {
+    "id": 354,
+    "info": {
+     "title": "風と共に来た騎士",
+     "description": "モンド城に向かう途中、あなたたちは偶然にも、巨龍と謎の人物の出会いを妨害してしまう。疑問を抱えながら進むあなたの前に、軽やかな少女が現れた。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 625
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 275
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 1200
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "360": "そよ風と共に"
+    },
+    "story": {
+     "0": {
+      "id": 35401,
+      "isHidden": false,
+      "title": "モンド城へ進み続ける"
+     },
+     "1": {
+      "id": 35402,
+      "isHidden": false,
+      "title": "軽やかな少女と会話する"
+     },
+     "2": {
+      "id": 35403,
+      "isHidden": false,
+      "title": "アンバーが案内した場所へ行く"
+     },
+     "3": {
+      "id": 35404,
+      "isHidden": false,
+      "title": "アンバーを使って空中のスライムを倒す"
+     },
+     "4": {
+      "id": 35405,
+      "isHidden": false,
+      "title": "隠れた発動器を見つけ出し運転を開始する"
+     }
+    }
+   },
+   "5": {
+    "id": 360,
+    "info": {
+     "title": "そよ風と共に",
+     "description": "少女の名前はアンバー、偵察騎士の彼女はモンドまで案内すると提案してきた。しかしその前に、まずはモンド城外に出現したヒルチャールを倒さなければならない、それが彼女の今回の任務である。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 925
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 275
+     },
+     "201": {
+      "id": 201,
+      "icon": "UI_ItemIcon_201",
+      "type": "item",
+      "rank": 5,
+      "count": 20
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 1800
+     },
+     "15303": {
+      "id": 15303,
+      "icon": "UI_EquipIcon_Bow_Curve",
+      "type": 3,
+      "rank": 3,
+      "count": 1
+     },
+     "104011": {
+      "id": 104011,
+      "icon": "UI_ItemIcon_104011",
+      "type": "item",
+      "rank": 1,
+      "count": 8
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "356": "自由の都"
+    },
+    "story": {
+     "0": {
+      "id": 36001,
+      "isHidden": false,
+      "title": "ヒルチャールを倒す"
+     },
+     "1": {
+      "id": 36003,
+      "isHidden": false,
+      "title": "付近のヒルチャール拠点を片付ける"
+     },
+     "2": {
+      "id": 36004,
+      "isHidden": false,
+      "title": "アンバーと会話する"
+     },
+     "3": {
+      "id": 36005,
+      "isHidden": false,
+      "title": "モンド城へ進み続ける"
+     }
+    }
+   },
+   "6": {
+    "id": 356,
+    "info": {
+     "title": "自由の都",
+     "description": "あなたたちの協力により、問題はすぐに解決された。アンバーの案内で、あなたたちは自由の都——モンドにたどり着いた。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 850
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 250
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 1625
+     },
+     "104011": {
+      "id": 104011,
+      "icon": "UI_ItemIcon_104011",
+      "type": "item",
+      "rank": 1,
+      "count": 7
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "357": "龍災"
+    },
+    "story": {
+     "0": {
+      "id": 35601,
+      "isHidden": false,
+      "title": "アンバーと会話する"
+     },
+     "1": {
+      "id": 35602,
+      "isHidden": false,
+      "title": null
+     },
+     "2": {
+      "id": 35603,
+      "isHidden": false,
+      "title": "アンバーが案内した場所へ行く"
+     },
+     "3": {
+      "id": 35604,
+      "isHidden": false,
+      "title": "アンバーと会話する"
+     },
+     "4": {
+      "id": 35606,
+      "isHidden": false,
+      "title": "噴水広場に行く"
+     }
+    }
+   },
+   "7": {
+    "id": 357,
+    "info": {
+     "title": "龍災",
+     "description": "静かで平和なモンド城は突然、巨龍の襲撃を受けた。それはアンバーが言っていた風魔龍であり、先程森の中で目撃した龍であった。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 1250
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 275
+     },
+     "201": {
+      "id": 201,
+      "icon": "UI_ItemIcon_201",
+      "type": "item",
+      "rank": 5,
+      "count": 20
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 2400
+     },
+     "104012": {
+      "id": 104012,
+      "icon": "UI_ItemIcon_104012",
+      "type": "item",
+      "rank": 2,
+      "count": 2
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "358": "西風騎士団"
+    },
+    "story": {
+     "0": {
+      "id": 35721,
+      "isHidden": false,
+      "title": "風龍襲来"
+     },
+     "1": {
+      "id": 35722,
+      "isHidden": false,
+      "title": "風魔龍を撃退する"
+     },
+     "2": {
+      "id": 35723,
+      "isHidden": false,
+      "title": "アンバーと会話する"
+     },
+     "3": {
+      "id": 35724,
+      "isHidden": false,
+      "title": "騎士団本部へ行く"
+     }
+    }
+   },
+   "8": {
+    "id": 358,
+    "info": {
+     "title": "西風騎士団",
+     "description": "苦戦の末、襲いかかってきた風魔龍を撃退する。その終始を見ていた西風騎士団のガイアに誘われ、あなたたちは騎士団本部に向かった。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 1025
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 225
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 1950
+     },
+     "104011": {
+      "id": 104011,
+      "icon": "UI_ItemIcon_104011",
+      "type": "item",
+      "rank": 1,
+      "count": 9
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "306": "昔日の風",
+     "307": "騎士の現場教習",
+     "308": "本の中の静電気"
+    },
+    "story": {
+     "0": {
+      "id": 35800,
+      "isHidden": false,
+      "title": null
+     },
+     "1": {
+      "id": 35801,
+      "isHidden": false,
+      "title": "騎士団本部に入る"
+     },
+     "2": {
+      "id": 35802,
+      "isHidden": false,
+      "title": "ジンと会話する"
+     }
+    }
+   },
+   "9": {
+    "id": 306,
+    "info": {
+     "title": "昔日の風",
+     "description": "風魔龍の脅威を排除するには、廃墟に残っている力を消す必要がある。そのため、あなたは西風の鷹の神殿に向かうことになった。アンバーはそこであなたを待っている。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 1550
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 275
+     },
+     "201": {
+      "id": 201,
+      "icon": "UI_ItemIcon_201",
+      "type": "item",
+      "rank": 5,
+      "count": 20
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 3000
+     },
+     "104012": {
+      "id": 104012,
+      "icon": "UI_ItemIcon_104012",
+      "type": "item",
+      "rank": 2,
+      "count": 3
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "307": "騎士の現場教習",
+     "308": "本の中の静電気"
+    },
+    "story": {
+     "0": {
+      "id": 30600,
+      "isHidden": false,
+      "title": "神殿の入口でアンバーと合流する"
+     },
+     "1": {
+      "id": 30601,
+      "isHidden": false,
+      "title": "アンバーと会話する"
+     },
+     "2": {
+      "id": 30602,
+      "isHidden": false,
+      "title": "神殿に入る"
+     },
+     "3": {
+      "id": 30603,
+      "isHidden": false,
+      "title": "神殿の奥を探索する"
+     },
+     "4": {
+      "id": 30604,
+      "isHidden": false,
+      "title": "秘境を出る"
+     },
+     "5": {
+      "id": 30610,
+      "isHidden": false,
+      "title": "アンバーと会話する"
+     },
+     "6": {
+      "id": 30612,
+      "isHidden": false,
+      "title": null
+     }
+    }
+   },
+   "10": {
+    "id": 307,
+    "info": {
+     "title": "騎士の現場教習",
+     "description": "北風の狼の神殿をガイアと共に調査する。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 1550
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 275
+     },
+     "201": {
+      "id": 201,
+      "icon": "UI_ItemIcon_201",
+      "type": "item",
+      "rank": 5,
+      "count": 20
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 3000
+     },
+     "1015": {
+      "id": 1015,
+      "icon": "UI_AvatarIcon_Kaeya_Card",
+      "type": "item",
+      "rank": 4,
+      "count": 1
+     },
+     "11303": {
+      "id": 11303,
+      "icon": "UI_EquipIcon_Sword_Traveler",
+      "type": 3,
+      "rank": 3,
+      "count": 1
+     },
+     "104012": {
+      "id": 104012,
+      "icon": "UI_ItemIcon_104012",
+      "type": "item",
+      "rank": 2,
+      "count": 3
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "306": "昔日の風",
+     "308": "本の中の静電気"
+    },
+    "story": {
+     "0": {
+      "id": 30700,
+      "isHidden": false,
+      "title": "神殿の入口でガイアと合流する"
+     },
+     "1": {
+      "id": 30701,
+      "isHidden": false,
+      "title": "ガイアと会話する"
+     },
+     "2": {
+      "id": 30702,
+      "isHidden": false,
+      "title": "神殿に入る"
+     },
+     "3": {
+      "id": 30703,
+      "isHidden": false,
+      "title": "神殿の奥を探索する"
+     },
+     "4": {
+      "id": 30704,
+      "isHidden": false,
+      "title": "秘境を出る"
+     },
+     "5": {
+      "id": 30710,
+      "isHidden": false,
+      "title": "ガイアと会話する"
+     },
+     "6": {
+      "id": 30713,
+      "isHidden": false,
+      "title": "ガイアカットシーン"
+     },
+     "7": {
+      "id": 30715,
+      "isHidden": false,
+      "title": "ガイアと会話する"
+     }
+    }
+   },
+   "11": {
+    "id": 308,
+    "info": {
+     "title": "本の中の静電気",
+     "description": "南風の獅子の神殿をリサと共に調査する。"
+    },
+    "reward": {
+     "101": {
+      "id": 101,
+      "icon": "UI_ItemIcon_101",
+      "type": "item",
+      "rank": 3,
+      "count": 1550
+     },
+     "102": {
+      "id": 102,
+      "icon": "UI_ItemIcon_102",
+      "type": "item",
+      "rank": 3,
+      "count": 275
+     },
+     "201": {
+      "id": 201,
+      "icon": "UI_ItemIcon_201",
+      "type": "item",
+      "rank": 5,
+      "count": 20
+     },
+     "202": {
+      "id": 202,
+      "icon": "UI_ItemIcon_202",
+      "type": "item",
+      "rank": 3,
+      "count": 3000
+     },
+     "1006": {
+      "id": 1006,
+      "icon": "UI_AvatarIcon_Lisa_Card",
+      "type": "item",
+      "rank": 4,
+      "count": 1
+     },
+     "14303": {
+      "id": 14303,
+      "icon": "UI_EquipIcon_Catalyst_Lightnov",
+      "type": 3,
+      "rank": 3,
+      "count": 1
+     },
+     "104012": {
+      "id": 104012,
+      "icon": "UI_ItemIcon_104012",
+      "type": "item",
+      "rank": 2,
+      "count": 3
+     }
+    },
+    "suggestTrackMainQuestList": {
+     "306": "昔日の風",
+     "307": "騎士の現場教習"
+    },
+    "story": {
+     "0": {
+      "id": 30800,
+      "isHidden": false,
+      "title": "神殿の入口でリサと合流する"
+     },
+     "1": {
+      "id": 30801,
+      "isHidden": false,
+      "title": "リサと会話する"
+     },
+     "2": {
+      "id": 30802,
+      "isHidden": false,
+      "title": "神殿に入る"
+     },
+     "3": {
+      "id": 30803,
+      "isHidden": false,
+      "title": "神殿の奥を探索する"
+     },
+     "4": {
+      "id": 30804,
+      "isHidden": false,
+      "title": "秘境を出る"
+     },
+     "5": {
+      "id": 30810,
+      "isHidden": false,
+      "title": "リサと会話する"
+     },
+     "6": {
+      "id": 30814,
+      "isHidden": false,
+      "title": "リサと会話する"
+     }
+    }
+   },
+   "12": {
+    "id": 311,
+    "info": {
+     "title": "一段落つく",
+     "description": "一段落ついた後、パイモンと会話することで発生する隠れミッション"
+    },
+    "reward": null,
+    "suggestTrackMainQuestList": null,
+    "story": {
+     "0": {
+      "id": 31101,
+      "isHidden": false,
+      "title": null
+     }
+    }
+   }
+  }
+ }
+}

@@ -8,7 +8,7 @@ const at = (d: number, h = 0, mi = 0) => new Date(2026, 9, d, h, mi).getTime();
 const cap: Capacity = { weekday: 60, weekend: 180, playStartHour: 20 };
 
 function task(path: string, p: Partial<Task> = {}): Task {
-	return { path, title: path, game: "genshin", kind: "event", prereqs: [], missingPrereqs: [], status: "todo", estimate: 30, ...p };
+	return { path, title: path, game: "genshin", kind: "event", prereqs: [], missingPrereqs: [], unlock: [], status: "todo", estimate: 30, ...p };
 }
 
 describe("playWindows", () => {

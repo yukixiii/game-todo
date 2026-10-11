@@ -27,12 +27,18 @@ export interface Task {
 	estimate?: number;
 	/** Remaining minutes, overrides estimate when set. */
 	remaining?: number;
+	/** Imported rough estimate, offered in the inbox; never used for scheduling. */
+	suggestedEstimate?: number;
 	/** Resolved paths of prerequisite tasks. */
 	prereqs: string[];
 	/** Prerequisite links that did not resolve to a task note. */
 	missingPrereqs: string[];
+	/** Unlock / participation conditions as written in the source (free text). */
+	unlock: string[];
 	status: Status;
 	source?: string;
+	/** Original article / data page of an imported task. */
+	url?: string;
 	recurrenceOf?: string;
 }
 
@@ -45,6 +51,10 @@ export interface RecurringTemplate {
 	rule: string;
 	/** Raw prerequisite links, copied verbatim to instances. */
 	prereqLinks: string[];
+	/** "preset:<id>" for templates created from a built-in preset. */
+	source?: string;
+	/** Reference page, copied to instances. */
+	url?: string;
 }
 
 /** Resolves a link target (without brackets) to a note path, or null. */
@@ -102,12 +112,19 @@ export function parseTask(
 		deadline: parseDate(fm.deadline),
 		estimate: asMinutes(fm.estimate),
 		remaining: asMinutes(fm.remaining),
+		suggestedEstimate: asMinutes(fm.suggestedEstimate),
 		prereqs: [...new Set(prereqs)],
 		missingPrereqs,
+		unlock: asList(fm.unlock),
 		status: asEnum(fm.status, ["todo", "doing", "done"] as const, "todo"),
 		source: typeof fm.source === "string" ? fm.source : undefined,
+		url: asUrl(fm.url),
 		recurrenceOf: typeof fm.recurrenceOf === "string" ? linkTarget(fm.recurrenceOf) : undefined,
 	};
+}
+
+function asUrl(v: unknown): string | undefined {
+	return typeof v === "string" && /^https?:\/\//.test(v) ? v : undefined;
 }
 
 export function parseTemplate(
@@ -124,7 +141,28 @@ export function parseTemplate(
 		estimate: asMinutes(fm.estimate),
 		rule: fm.rule.trim(),
 		prereqLinks: asList(fm.prereqs),
+		source: typeof fm.source === "string" ? fm.source : undefined,
+		url: asUrl(fm.url),
 	};
+}
+
+export interface NewTemplateFields {
+	game: Game;
+	rule: string;
+	estimate?: number;
+	source?: string;
+	url?: string;
+}
+
+/** Builds the markdown content of a recurring template note. */
+export function buildTemplateNote(f: NewTemplateFields, body = ""): string {
+	const lines = ["---", "gtodo: recurring", `game: ${f.game}`, "kind: periodic", `rule: ${yamlString(f.rule)}`];
+	lines.push(f.estimate != null ? `estimate: ${f.estimate}` : "estimate:");
+	lines.push("prereqs: []");
+	if (f.source) lines.push(`source: ${yamlString(f.source)}`);
+	if (f.url) lines.push(`url: ${yamlString(f.url)}`);
+	lines.push("---", "");
+	return lines.join("\n") + body;
 }
 
 /** Minutes left to do for an unfinished task (0 when not estimated). */
@@ -138,8 +176,11 @@ export interface NewTaskFields {
 	start?: number;
 	deadline?: number;
 	estimate?: number;
+	suggestedEstimate?: number;
 	prereqLinks?: string[];
+	unlock?: string[];
 	source?: string;
+	url?: string;
 	recurrenceOf?: string;
 }
 
@@ -153,6 +194,7 @@ export function buildTaskNote(f: NewTaskFields, body = ""): string {
 	if (f.start != null) lines.push(`start: ${formatLocalIso(f.start)}`);
 	if (f.deadline != null) lines.push(`deadline: ${formatLocalIso(f.deadline)}`);
 	lines.push(f.estimate != null ? `estimate: ${f.estimate}` : "estimate:");
+	if (f.suggestedEstimate != null) lines.push(`suggestedEstimate: ${f.suggestedEstimate}`);
 	const links = f.prereqLinks ?? [];
 	if (links.length) {
 		lines.push("prereqs:");
@@ -160,8 +202,13 @@ export function buildTaskNote(f: NewTaskFields, body = ""): string {
 	} else {
 		lines.push("prereqs: []");
 	}
+	if (f.unlock?.length) {
+		lines.push("unlock:");
+		for (const u of f.unlock) lines.push(`  - ${yamlString(u)}`);
+	}
 	lines.push("status: todo");
 	if (f.source) lines.push(`source: ${yamlString(f.source)}`);
+	if (f.url) lines.push(`url: ${yamlString(f.url)}`);
 	if (f.recurrenceOf) lines.push(`recurrenceOf: ${yamlString(f.recurrenceOf)}`);
 	lines.push("---", "");
 	return lines.join("\n") + body;

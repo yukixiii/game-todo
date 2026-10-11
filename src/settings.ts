@@ -3,10 +3,16 @@ import type GameTodoPlugin from "./main";
 import { Game, GAME_LABEL, GAMES } from "./model";
 import { ServerClock } from "./recurrence";
 import { Capacity } from "./scheduler";
+import { WUWA_NOTICE_URL } from "./sources/wuwa";
 
 export interface GameSettings extends ServerClock {
 	/** JSON feed URL for importing events (used for games without a built-in source). */
 	feedUrl: string;
+	/**
+	 * Multiplier for suggested estimates of imported quests/events. 1 = the wiki pace the quest
+	 * formulas were fitted to (voices played, no skipping).
+	 */
+	estimateScale: number;
 }
 
 export interface GameTodoSettings {
@@ -16,6 +22,10 @@ export interface GameTodoSettings {
 	games: Record<Game, GameSettings>;
 	genshinImport: boolean;
 	genshinExcludeKeywords: string[];
+	wuwaImport: boolean;
+	/** Override for the notice JSON; empty = built-in default, so updates to the default reach existing installs. */
+	wuwaNoticeUrl: string;
+	wuwaExcludeKeywords: string[];
 	autoDeleteExpiredRecurring: boolean;
 }
 
@@ -24,24 +34,29 @@ export const DEFAULT_SETTINGS: GameTodoSettings = {
 	capacity: { weekday: 60, weekend: 180, perDay: [null, null, null, null, null, null, null], playStartHour: 20 },
 	horizonDays: 180,
 	games: {
-		genshin: { utcOffset: 8, resetHour: 4, weeklyResetDay: 1, feedUrl: "" },
-		wuwa: { utcOffset: 8, resetHour: 4, weeklyResetDay: 1, feedUrl: "" },
+		genshin: { utcOffset: 8, resetHour: 4, weeklyResetDay: 1, feedUrl: "", estimateScale: 1 },
+		wuwa: { utcOffset: 8, resetHour: 4, weeklyResetDay: 1, feedUrl: "", estimateScale: 1 },
 	},
 	genshinImport: true,
 	genshinExcludeKeywords: ["祈願", "チャージ", "アンケート"],
+	wuwaImport: true,
+	wuwaNoticeUrl: "",
+	wuwaExcludeKeywords: ["パック", "アンケート"],
 	autoDeleteExpiredRecurring: true,
 };
 
 export function mergeSettings(saved: Partial<GameTodoSettings> | null): GameTodoSettings {
 	const s = saved ?? {};
+	const game = (g: Game): GameSettings => {
+		// minutesPerStep was replaced by estimateScale.
+		const { minutesPerStep: _, ...rest } = (s.games?.[g] ?? {}) as Partial<GameSettings> & { minutesPerStep?: unknown };
+		return { ...DEFAULT_SETTINGS.games[g], ...rest };
+	};
 	return {
 		...DEFAULT_SETTINGS,
 		...s,
 		capacity: { ...DEFAULT_SETTINGS.capacity, ...s.capacity },
-		games: {
-			genshin: { ...DEFAULT_SETTINGS.games.genshin, ...s.games?.genshin },
-			wuwa: { ...DEFAULT_SETTINGS.games.wuwa, ...s.games?.wuwa },
-		},
+		games: { genshin: game("genshin"), wuwa: game("wuwa") },
 	};
 }
 
@@ -158,6 +173,17 @@ export class GameTodoSettingTab extends PluginSettingTab {
 						await save();
 					});
 				});
+			numberSetting(
+				containerEl,
+				"推定所要時間の倍率",
+				"取り込んだ任務・イベントの推定値に掛ける倍率。1 は有志 wiki の目安（ボイスを聞きながら進めるペース）で、会話をよく飛ばすなら 0.5 程度。推定値は Inbox に表示されるだけで、採用するまでスケジュールには使いません",
+				() => g.estimateScale,
+				async (n) => {
+					g.estimateScale = Math.max(0, n);
+					await save();
+				},
+				{ min: 0, step: 0.1 },
+			);
 			new Setting(containerEl)
 				.setName("イベント JSON フィード URL")
 				.setDesc('任意。[{"id","title","start","end"}] 形式の JSON を取り込みます')
@@ -185,6 +211,36 @@ export class GameTodoSettingTab extends PluginSettingTab {
 			.addText((t) =>
 				t.setValue(s.genshinExcludeKeywords.join(", ")).onChange(async (v) => {
 					s.genshinExcludeKeywords = v.split(/[,、]/).map((k) => k.trim()).filter(Boolean);
+					await save();
+				}),
+			);
+		new Setting(containerEl)
+			.setName("鳴潮のゲーム内お知らせから取り込む")
+			.setDesc("Kuro Games の公開 JSON を利用します。仕様変更で動かなくなる可能性があります")
+			.addToggle((t) =>
+				t.setValue(s.wuwaImport).onChange(async (v) => {
+					s.wuwaImport = v;
+					await save();
+				}),
+			);
+		new Setting(containerEl)
+			.setName("鳴潮: お知らせ JSON URL")
+			.setDesc("取得できなくなったときに差し替えます（空欄で既定値）")
+			.addText((t) =>
+				t
+					.setPlaceholder(WUWA_NOTICE_URL)
+					.setValue(s.wuwaNoticeUrl)
+					.onChange(async (v) => {
+						s.wuwaNoticeUrl = v.trim();
+						await save();
+					}),
+			);
+		new Setting(containerEl)
+			.setName("鳴潮: 除外キーワード")
+			.setDesc("タイトルにこれらを含むお知らせは取り込みません（カンマ区切り）")
+			.addText((t) =>
+				t.setValue(s.wuwaExcludeKeywords.join(", ")).onChange(async (v) => {
+					s.wuwaExcludeKeywords = v.split(/[,、]/).map((k) => k.trim()).filter(Boolean);
 					await save();
 				}),
 			);

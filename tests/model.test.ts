@@ -80,6 +80,22 @@ describe("model", () => {
 		expect(s).toContain('source: "hoyoverse-ann:1"');
 	});
 
+	it("round-trips unlock conditions and the suggested estimate", () => {
+		const s = buildTaskNote({
+			game: "wuwa",
+			kind: "event",
+			suggestedEstimate: 35,
+			unlock: ["ユニオンレベル≧14", '潮汐任務「惹かれ合う声」をクリア'],
+		});
+		expect(s).toContain("estimate:\nsuggestedEstimate: 35\n");
+		expect(s).toContain('unlock:\n  - "ユニオンレベル≧14"\n');
+		const t = parseTask("I/x.md", "x", { gtodo: "task", suggestedEstimate: 35, unlock: ["a", "b"] }, () => null)!;
+		expect(t.estimate).toBeUndefined();
+		expect(t.suggestedEstimate).toBe(35);
+		expect(t.unlock).toEqual(["a", "b"]);
+		expect(buildTaskNote({ game: "genshin", kind: "event" })).not.toContain("unlock");
+	});
+
 	it("sanitizes file names", () => {
 		expect(safeFileName('イベント「A」：B/C?')).toBe("イベント「A」：B C");
 	});

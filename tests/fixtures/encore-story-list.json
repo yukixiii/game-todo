@@ -1,0 +1,541 @@
+{
+ "storyTypes": [
+  {
+   "TypeId": "1",
+   "TypeDescription": "潮汐任務",
+   "Stories": [
+    {
+     "Group": "序章",
+     "Stories": [
+      {
+       "Id": 100001,
+       "Name": "とある漂泊する音の始まり・上",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_0a.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_0a.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 139000025,
+       "QuestDesc": "すでに残鳴は奏で始めている……あなたはその導きに従い、己の過去を探す旅に出る。それは、新たな、未知に満ち溢れる旅になるだろう。",
+       "ShowQuestList": [
+        139000025
+       ],
+       "Descrtption": "序章"
+      },
+      {
+       "Id": 100002,
+       "Name": "とある漂泊する音の始まり・下",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_0b.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_0b.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 139000026,
+       "QuestDesc": "すでに残鳴は奏で始めている……あなたはその導きに従い、己の過去を探す旅に出る。それは、新たな、未知に満ち溢れる旅になるだろう。",
+       "ShowQuestList": [
+        139000026
+       ],
+       "Descrtption": "序章"
+      }
+     ]
+    },
+    {
+     "Group": "第一章　今州の来訪者",
+     "Stories": [
+      {
+       "Id": 100003,
+       "Name": "惹かれ合う声",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_1.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_1.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 139000027,
+       "QuestDesc": "街灯が灯り、往来の声に惹かれ合ってしまう。親切な人の導きにより、繁栄で安泰な辺境の都市は目の前に広がった。",
+       "ShowQuestList": [
+        139000027
+       ],
+       "Descrtption": "第一章第一幕"
+      },
+      {
+       "Id": 100004,
+       "Name": "止め鐘を撞く行陣",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_3.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_3.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 139000029,
+       "QuestDesc": "万物の伊吹が流転し、伏波は相変わらず責務に努めている。繁栄と安泰が約束された今州の外は、危機に直面する残酷な戦場である。",
+       "ShowQuestList": [
+        139000029
+       ],
+       "Descrtption": "第一章第二幕"
+      },
+      {
+       "Id": 100005,
+       "Name": "策を奔らせて残星を候ふ",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_4.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_4.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 139000030,
+       "QuestDesc": "禁断の物語は冷え込んだ余燼と静寂が流れる廃墟に埋もれていた。残星は影に潜み、ピカピカと輝いている。それは、今となっても尚人の心を揺さぶる物語を伝おうとしているためである。",
+       "ShowQuestList": [
+        139000030
+       ],
+       "Descrtption": "第一章第三幕"
+      }
+     ]
+    },
+    {
+     "Group": "イベント任務",
+     "Stories": [
+      {
+       "Id": 100013,
+       "Name": "暗闇が白昼の扉を叩く頃",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_9_1.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_9_1.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 139000039,
+       "QuestDesc": "謎の依頼、失われた荷物、開けられたゲート……甘い夢と悪夢とが交錯する幻の中に、周りを彷徨う巨大な黒き影。その影は世界を闇で覆い、夢に繋ぐゲートを今州の各地に開けた。そして、「一瞬にして去り行く幸せを、ずっと留めておくことなどできない。ならばいっそ、永遠に覚めることのない夢を見続けていればいい」と、あなたに囁いた……",
+       "ShowQuestList": [
+        139000039
+       ],
+       "Descrtption": "幕間"
+      },
+      {
+       "Id": 100020,
+       "Name": "ダンゴでダンジョン",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_16a.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_16b.webp",
+       "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+       "QuestId": 221800001,
+       "QuestDesc": "「すごいものを作った」と、アンコから連絡がきた。一体どんなものなのか、確かめに行こう。\nアブ魔王城に乗り込み、アブ大王に捕まったダンゴの仲間たちを助け出そう！ アブ大王の陰謀を阻止して、お祭りを成功させるんだ！\nこれ以上アブ大王に好き勝手させないためには、引き続き魔王城を攻略する必要があります。",
+       "ShowQuestList": [
+        173800000,
+        221800001,
+        221800002
+       ],
+       "Descrtption": "幕間"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "TypeId": "2",
+   "TypeDescription": "連星任務",
+   "Stories": [
+    {
+     "Group": "瑝瓏",
+     "Stories": [
+      {
+       "Id": 101001,
+       "Name": "夜が明ける前に",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveRole/T_ArchiveRole_2.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveRole/T_ArchiveRole_2.webp",
+       "AreaIcon": "",
+       "QuestId": 125000082,
+       "QuestDesc": "残像潮による危機を乗り越え、忌炎と共に今州に戻ると……",
+       "ShowQuestList": [
+        125000082
+       ],
+       "Descrtption": "忌炎"
+      },
+      {
+       "Id": 101002,
+       "Name": "荒野からの帰還",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveRole/T_ArchiveRole_9.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveRole/T_ArchiveRole_9.webp",
+       "AreaIcon": "",
+       "QuestId": 121000031,
+       "QuestDesc": "今州で不思議な人間？に出くわしたようだ……",
+       "ShowQuestList": [
+        121000031
+       ],
+       "Descrtption": "凌陽"
+      },
+      {
+       "Id": 101003,
+       "Name": "我だけの道をゆく",
+       "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveRole/T_ArchiveRole_15.webp",
+       "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveRole/T_ArchiveRole_15.webp",
+       "AreaIcon": "",
+       "QuestId": 114000018,
+       "QuestDesc": "謎の手紙から「反魂互助会」と呼ばれる組織の存在を知り、それが今州の失踪事件に関わっている可能性がある。",
+       "ShowQuestList": [
+        114000018
+       ],
+       "Descrtption": "吟霖"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "TypeId": "10",
+   "TypeDescription": "イベント任務",
+   "Stories": [
+    {
+     "Group": "イベント任務",
+     "Stories": [
+      {
+       "Id": 159800004,
+       "Name": "ラグーナ特売・四",
+       "Descrtption": "アランナはブブ物流の配送車に興味を持っているようだ……",
+       "Type": "Quest",
+       "QuestId": 159800004
+      },
+      {
+       "Id": 159800005,
+       "Name": "ラグーナ特売・五",
+       "Descrtption": "おや？今日アランナは城内にいないようだ。",
+       "Type": "Quest",
+       "QuestId": 159800005
+      },
+      {
+       "Id": 197750002,
+       "Name": "全開疾走！スピードと激情！",
+       "Descrtption": "学生データを過剰に用いてシステムを訓練した結果、訓練用エクスペディションバイクの開発は行き詰まってしまった。そこでバイオメカ研のキノウが、あなたに協力を求めてやって来た。",
+       "Type": "Quest",
+       "QuestId": 197750002
+      },
+      {
+       "Id": 197800000,
+       "Name": "葦ノ原の「巫女様」",
+       "Descrtption": "桔梗から連絡が入り、ラベル学部で会うことになった。どうやら相談したいことがあるようだ……",
+       "Type": "Quest",
+       "QuestId": 197800000
+      },
+      {
+       "Id": 197800001,
+       "Name": "特別対策班",
+       "Descrtption": "「巫女様」と特別対策班の関係を知った桔梗は、 I.R.I.S.に問い合わせてほしいとあなたに頼み、自分は学園内での調査を続けることにした。",
+       "Type": "Quest",
+       "QuestId": 197800001
+      },
+      {
+       "Id": 197800002,
+       "Name": "助けられた研究員",
+       "Descrtption": "野外調査を行っていた研究員が、かつて「巫女様」に助けられたという。桔梗からキャンプの座標を受け取り、あなたはそこで手がかりを探すことにした。",
+       "Type": "Quest",
+       "QuestId": 197800002
+      },
+      {
+       "Id": 197800003,
+       "Name": "映画好きの幽霊巫女",
+       "Descrtption": "学園のチャットで「映画好きの幽霊巫女」の噂を知ったあなたは、真相を確かめるため、映画同好会の部室へ向かうことにした。",
+       "Type": "Quest",
+       "QuestId": 197800003
+      },
+      {
+       "Id": 197800004,
+       "Name": "太陽の精霊と不思議な友達",
+       "Descrtption": "太陽の精霊に、不思議な友達ができたらしい。桔梗はその正体が「巫女様」だと推測している。精霊と仲の良いあなたなら……と、彼女は追跡を依頼してきた。",
+       "Type": "Quest",
+       "QuestId": 197800004
+      },
+      {
+       "Id": 197800005,
+       "Name": "巫女の好み",
+       "Descrtption": "「巫女様」に避けられていると気づいた桔梗は、直接会えなくても、せめて贈り物だけでも届けたいと言った。あなたは、「巫女様」の好みについて手がかりをくれそうな人物に思い当たる……",
+       "Type": "Quest",
+       "QuestId": 197800005
+      },
+      {
+       "Id": 194800000,
+       "Name": "リズムの波に乗って",
+       "Descrtption": "「星軌アーケード」は、マインドダイブゲームルームであなたの挑戦を待っている。脈打つ光、果てなく続く軌道、スクリーンで躍る音符は、やがてひとつの星図へと化していく。躊躇はもういらない！既に準備を整えた仲間たちとともに、走り出そう！",
+       "Type": "Quest",
+       "QuestId": 194800000
+      },
+      {
+       "Id": 194850001,
+       "Name": "星巡りの旅の終点",
+       "Descrtption": "不思議な星巡るピンボールの大冒険も、これにてひと段落。そろそろ、これを仕組んだ「黒幕」に会いに行こう。",
+       "Type": "Quest",
+       "QuestId": 194850001
+      },
+      {
+       "Id": 312850000,
+       "Name": "深層空想秘境・空想の幻夢",
+       "Descrtption": "本来なら穂波にいるはずのナミポンが、突然スタートーチ学園に姿を現した。どうやら、あなたに何か大事な相談があるらしい……",
+       "Type": "Quest",
+       "QuestId": 312850000
+      },
+      {
+       "Id": 312850001,
+       "Name": "???",
+       "Descrtption": "???",
+       "Type": "Quest",
+       "QuestId": 312850001
+      },
+      {
+       "Id": 207700000,
+       "Name": "深き夢の扉を叩いて",
+       "Descrtption": "ラハイロイに現れた「心の集域」へと通じる「ゲート」。その奥深くにある「夢の館」では、ある危機が静かに芽生えつつある……",
+       "Type": "Quest",
+       "QuestId": 207700000
+      },
+      {
+       "Id": 207700002,
+       "Name": "???",
+       "Descrtption": "???",
+       "Type": "Quest",
+       "QuestId": 207700002
+      },
+      {
+       "Id": 264800002,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・一弦目",
+       "Descrtption": "清宵が何か相談したいことがあるらしい。山の道観を訪ねてみよう。",
+       "Type": "Quest",
+       "QuestId": 264800002
+      },
+      {
+       "Id": 264800004,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・二弦目",
+       "Descrtption": "清宵に琴を教わる約束をした。道観へ行って、次の課業を始めよう。",
+       "Type": "Quest",
+       "QuestId": 264800004
+      },
+      {
+       "Id": 264800005,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・三弦目",
+       "Descrtption": "今回の稽古場所は枝寄嶺に変わった。向かってみよう。",
+       "Type": "Quest",
+       "QuestId": 264800005
+      },
+      {
+       "Id": 264800006,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・四弦目",
+       "Descrtption": "清宵が琴の上達ぶりを見る日がやってきた……枝寄嶺の庭で待ち合わせよう。",
+       "Type": "Quest",
+       "QuestId": 264800006
+      },
+      {
+       "Id": 264800007,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・五弦目",
+       "Descrtption": "次の場所は方擎西峰。約束の時間になったら、清宵に会いに行こう。",
+       "Type": "Quest",
+       "QuestId": 264800007
+      },
+      {
+       "Id": 264800008,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・六弦目",
+       "Descrtption": "清宵が今日話したいことがあると言っていた。課業のついでに聞いてみよう。",
+       "Type": "Quest",
+       "QuestId": 264800008
+      },
+      {
+       "Id": 264800009,
+       "Name": "清らかな調べ、過ぎゆく歳月を記す・七弦目",
+       "Descrtption": "今日は清宵と合奏の約束がある。軍策府近くの馴染みの東屋へ向かおう――彼女が待っている。",
+       "Type": "Quest",
+       "QuestId": 264800009
+      },
+      {
+       "Id": 168000002,
+       "Name": "タダのランチ？",
+       "Descrtption": "学園は「陽換えの祝典」のお祭りムード一色。学生たちは誘い合って、祭りのひとときを楽しんでいる。\nそんな中、学園で最初の友達――リンネーから食事の誘いが届いた！\nせっかくのお祭りだ、彼女と一緒に「限定メニュー」を食べに行こう。",
+       "QuestDesc": "ピンポンパンポ～ン♪ リンネーちゃんからのリマインドだよ！ 新しい事件、ハッケン！",
+       "Type": "Quest",
+       "QuestId": 168000002
+      },
+      {
+       "Id": 158000001,
+       "Name": "既知の予感！",
+       "Descrtption": "間違いなく、これは「非日常」の緊急事態だ！動作の不安定な試作メカが、まさかの失踪――。学生たちの安全を守るため、リンネーから招集がかかった。「ヴォイドワームライダーズ」、再始動！\nまずは広場でリンネーと合流し、メカの管理人に事情を聞こう。",
+       "QuestDesc": "ほら、行くよ～！ 一緒に調査しちゃおっ！",
+       "Type": "Quest",
+       "QuestId": 158000001
+      },
+      {
+       "Id": 158000002,
+       "Name": "追いついたなら……",
+       "Descrtption": "手がかりが見つかった！消えたメカを追うため、リンネーは実験棟での合流を提案している。数々の奇妙な痕跡は、まさに「非日常」の証拠。これは危険な予兆か、それともただの取り越し苦労か？\nリンネーと一緒に、事件の真相を推理しよう。",
+       "QuestDesc": "なんか状況、マズいかも……マジで急がないとヤバいって！",
+       "Type": "Quest",
+       "QuestId": 158000002
+      },
+      {
+       "Id": 158000003,
+       "Name": "ロボット、見せたげるよ",
+       "Descrtption": "リンネーがメカの信号をキャッチした。反応は既に、学園の外にあるらしい。これほど危険な違法改造まで施して、メカの管理人は何をしようとしているのか？暴走したメカの行先は？追跡の果てに、二人を待つ真実とは――？\n学園の正門へ向かい、リンネーと合流しよう。",
+       "QuestDesc": "久しぶりの全速前進～！真相にマジで近づいてきた感じがするし！",
+       "Type": "Quest",
+       "QuestId": 158000003
+      },
+      {
+       "Id": 158000004,
+       "Name": "新雨の行方",
+       "Descrtption": "緊急事態は解決し、祝典を終えた学園には、いつもの日常が戻ってきた。そんなある日、デバイスにリンネーからのメッセージが届く――どうやらあなたを呼び出して、あの事件の後日談を話したいようだ。\n広場の噴水へ向かい、リンネーに会おう。",
+       "QuestDesc": "次どうするか決める前にさ、ソーダとかどう？ あたしの奢りで♪",
+       "Type": "Quest",
+       "QuestId": 158000004
+      },
+      {
+       "Id": 165800003,
+       "Name": "栄養剤体験レポート",
+       "Descrtption": "学生たちが祝典を楽しむ中、教師たちはそれぞれの仕事に追われていた。同じ時間帯に並行してこなさなければならない業務は13項目もある。そんな中でも、モーニエは気遣いのメッセージを送ってくれた。\nその優しさと、休憩を取ろうとしないモーニエのために、美味しいものを届けてあげよう。",
+       "QuestDesc": "新しい栄養剤……試食チームのフィードバックデータは予想通りですね。",
+       "Type": "Quest",
+       "QuestId": 165800003
+      },
+      {
+       "Id": 165800004,
+       "Name": "状況変数調整",
+       "Descrtption": "図書館での短い面会からしばらく経った後、モーニエから「もう一度会いたい」というメッセージが届いた。その内容は前回のメッセージとほぼ同じだが、どうやら彼女は、何かの構想のために前回の面会の状況を再現しようとしているらしい。\n図書館へ向かい、もう一度モーニエに会いに行き、彼女の研究を手伝ってあげよう。",
+       "QuestDesc": "今回の情景再現の実験はとても有意義でした……先輩、協力してくれて本当にありがとうございます。",
+       "Type": "Quest",
+       "QuestId": 165800004
+      },
+      {
+       "Id": 165800019,
+       "Name": "ワッフル療法",
+       "Descrtption": "陽換えの祝典の温もりと賑やかさに乗じて、リューク・ヘルセンは新作ワッフルを焼き上げた。そして、ワッフルと同じくらい柔らかく、カフェラテのように香り高い誘いのメッセージが、陽の光に乗ってあなたの端末に届く。\n今日はいい天気だ。空き時間を利用して保健室へ向かい、リューク・ヘルセンの新作ワッフルを味わってみよう。",
+       "QuestDesc": "たまには立ち止まって、アフタヌーンティーを楽しむのはどうかな。",
+       "Type": "Quest",
+       "QuestId": 165800019
+      },
+      {
+       "Id": 165800020,
+       "Name": "お菓子不足症",
+       "Descrtption": "あなたの感想をもとに、リューク・ヘルセンはワッフルのレシピをさらに改良した。しかし、焼き立てのワッフルは、リュークが席を離れてからわずか2分で姿を消してしまった！いったい誰が、こんなに素早くワッフルを持ち去ることに成功したのだろうか？焼き立てのスイーツを見つけ出すために、リューク・ヘルセンはあなたに「依頼」をかけてきた。\n保健室へ向かい、デザート失踪事件を調査しよう。",
+       "QuestDesc": "たまには気分転換して、探偵にでもなるのはどうかな？ワタシが助手になってあげるよ。",
+       "Type": "Quest",
+       "QuestId": 165800020
+      },
+      {
+       "Id": 165800021,
+       "Name": "デザート免疫低下",
+       "Descrtption": "探偵ごっこの最後に、2分間にワッフルを持ち去った凄腕の正体を二人は明らかにしたが、ワッフルの所在はまだ分かっていない。体の小さい「犯ニャン」は、戦利品をどこに隠したのだろうか？\n「ここからそう遠くなく、静かで人の邪魔が入らない場所」——\nそれを手掛かりに、リューク・ヘルセンと一緒に準備チームの倉庫に向かおう。",
+       "QuestDesc": "容疑者はすでに捕らえた。探偵さん、そろそろ事件の幕引きだ。",
+       "Type": "Quest",
+       "QuestId": 165800021
+      },
+      {
+       "Id": 165800022,
+       "Name": "モフモフ処方",
+       "Descrtption": "リューク・ヘルセンからメッセージが届いた。祝典をゆっくり楽しみながら子猫の里親を探している間に、例の子猫が驚いて、またカゴから逃げ出してしまったらしい。\nこんなモフモフの小悪党を、簡単に逃がすわけにはいかない！これからのワッフルの安全のためにも、校舎の近くへ向かい、この小さな犯人を捕まえて保健室へ連れ戻そう。",
+       "QuestDesc": "今日みたいな日は、友からのアドバイスを聞くとしようか。",
+       "Type": "Quest",
+       "QuestId": 165800022
+      },
+      {
+       "Id": 165800005,
+       "Name": "ドーパミン分泌異常",
+       "Descrtption": "モーニエがまた誘いのメッセージを送ってきた。前回とは違い、今度はリラックスできそうな場所を選んでくれた。「植物が豊かで、空も見えます」とのことだ。\n彼女はその新しい場所で、期待する実験結果を得られるだろうか。\nシェルヒルに向かい、そこで待つモーニエに会いに行こう。",
+       "QuestDesc": "風が気持ち良いです。こうして二人で散歩ができて、とても嬉しいです。",
+       "Type": "Quest",
+       "QuestId": 165800005
+      },
+      {
+       "Id": 165800006,
+       "Name": "幸福の正規化",
+       "Descrtption": "しばらく準備を重ねた後、今回はあなたがモーニエに連絡する番だ。あなたの誘いに、モーニエは少し緊張しているようだ。どうやらこの分野ではあまり経験がないらしい。ここは間違いなく、モーニエの先輩として、あなたが力を発揮する番だろう。\nモーニエと一緒にシアタールームへ向かい、彼女のために用意しておいた映画を一緒に観よう。",
+       "QuestDesc": "この映画……覚えておきます。あとでまた観直したいです。",
+       "Type": "Quest",
+       "QuestId": 165800006
+      },
+      {
+       "Id": 165800007,
+       "Name": "黄昏のシルフ",
+       "Descrtption": "研究を完成させたモーニエから新しいメッセージが届いた。紆余曲折の末、「シルフ」のプロトタイプがついに完成したという。短い文章からも、彼女の胸の高鳴りが伝わってくる。モーニエは、あなたに最初に見てほしいと思っているようだ。\n研究所へ向かい、モーニエとともに研究完成の喜びを分かち合おう。",
+       "QuestDesc": "私にとって、一番素敵な思い出は……",
+       "Type": "Quest",
+       "QuestId": 165800007
+      },
+      {
+       "Id": 165800023,
+       "Name": "生活のときめき",
+       "Descrtption": "祝典が終わった後、リューク・ヘルセンはあなたとの約束を果たし、長くも短くもない日数の休暇を申請した。そして休暇の初日、彼はまた新しいワッフルを作り、あなたに食べてほしいと誘ってきた。\n新しく作られたワッフルの味はいかがだろうか、それと、子猫と医者は睦まじく付き合えているのだろうか。保健室に向かい、リューク・ヘルセンに聞いてみよう。",
+       "QuestDesc": "人生はあまりにも短い。出会いの一つひとつを、大切にしたいんだ。",
+       "Type": "Quest",
+       "QuestId": 165800023
+      },
+      {
+       "Id": 165800024,
+       "Name": "水面に佇む船",
+       "Descrtption": "彼女はどこに？",
+       "QuestDesc": ".. .-- .. .-.. .-.. .--. .-. --- - . -.-. - -.-- --- ..-",
+       "Type": "Quest",
+       "QuestId": 165800024
+      },
+      {
+       "Id": 165800014,
+       "Name": "紙の折れ線",
+       "Descrtption": "シグリカが部屋に戻った。\n裏学園での失態が、脳裏で何度も再生され、彼女の頬は赤く染まっていた。大好きなぬいぐるみを抱きしめても、顔の熱は下がらない。\n（恥ずかしいな……いや、シグリカ。先輩や気遣ってくれるみんなに、ちゃんと謝らなくちゃ）\n彼女はそう思いながら、ウェーブラインを開き、あなたにメッセージを送ろうとした。",
+       "QuestDesc": "紙で黒猫を折るのって……すごく難しいなぁ……",
+       "Type": "Quest",
+       "QuestId": 165800014
+      },
+      {
+       "Id": 165800015,
+       "Name": "地面の刻印",
+       "Descrtption": "シグリカは訓練場で、ルーンの一つひとつを正確に描けるように訓練していた。皆の希望を背負う彼女は、皆の期待に押され続け、知らず知らずのうちに神経は張り詰め、まるで弾力を失った弓の弦のようになっていた。しかし、シグリカは自分のそんな心に気付きもせずに、息すらできない淵へと自分を押しやろうとしている……",
+       "QuestDesc": "訓練は大変だけど、とても有意義なの！わたし、これからも頑張るね！",
+       "Type": "Quest",
+       "QuestId": 165800015
+      },
+      {
+       "Id": 165800016,
+       "Name": "羽根の痕跡",
+       "Descrtption": "シグリカに学園のとある屋上まで連れてこられた。\nいかにも普通の屋上だが、彼女には分かる。この何の変哲もない場所に、どれほど自由を愛する「精霊」たちが留まっているかを。鳥の一羽一羽にはそれぞれ個性があるが、あまりにも小さいため、見つけるには鋭い眼力が必要だ。もちろん、シグリカにはその眼力がある。そして、あなたにもそれが求められる。",
+       "QuestDesc": "先輩、鳥は好き？",
+       "Type": "Quest",
+       "QuestId": 165800016
+      },
+      {
+       "Id": 165800017,
+       "Name": "静けさの意味",
+       "Descrtption": "シグリカは黙って屋上に座っていた。\nかつては思いを馳せさせてくれた風も、今ではただ体を通り抜け、体温を奪うだけのものに感じられる。\n黄金によって鋳られている心臓は、いつの間にかこれほどにも重たくなっているなんて……鼓動するたびに、小さく悲鳴を上げている。\n「もう、叫ばないで……」と彼女は祈るが、役に立たない。\nその瞬間、シグリカはあなたの足音を耳にした。",
+       "QuestDesc": "先輩……もう少しここにいてもいい？",
+       "Type": "Quest",
+       "QuestId": 165800017
+      },
+      {
+       "Id": 165800018,
+       "Name": "幸せのおまじない",
+       "Descrtption": "裏学園の危機を解決した後、シグリカの気分はこれまでにないほど晴れやかになった。彼女は待ちきれずに、その喜びをあなたと分かち合った。そしてその後、胸に残る高揚を抱えて、彼女は自分の「聖地」へ向かった。\nそこには、彼女の期待やすべての弱さ、迷いが積もっている。今、そこには喜びも加えられようとしている。シグリカはあなたとの冒険を空や飛ぶ鳥たちに語り、決して忘れないようにと願いを捧げた。",
+       "QuestDesc": "先輩とのツーショット、大事にするからね！うん、他の大切な写真と一緒にしまっておこう。",
+       "Type": "Quest",
+       "QuestId": 165800018
+      },
+      {
+       "Id": 165800008,
+       "Name": "『祝典は二度とない』",
+       "Descrtption": "「陽換えの祝典」の主役は、あくまで学生たちだ。裏方の教師たちのためのものでもなければ、ましてや学園長のものでもない。あなたは、ルシラーがどれほど多忙かをよく知っている。だから、あのときの映画鑑賞こそが、彼女が捻出できた唯一の休息なのだと思っていた。\nしかし、会場の外で――あなたは偶然、優雅に散歩を楽しむルシラーの姿を目にする。\n「映画の予告編として、この出来栄えはどうかしら？」",
+       "QuestDesc": "「真の幸福をもたらす物事に時間を割くことだ。例えば……映画を観ることとか」",
+       "Type": "Quest",
+       "QuestId": 165800008
+      },
+      {
+       "Id": 165800009,
+       "Name": "『工学部の修理台の場面』",
+       "Descrtption": "なんの変哲もないある日、あなたのもとに、ただならぬメッセージが届いた。多忙を極めるルシラーから連絡が来る時点で、それ自体がただ事ではない。彼女がもたらしたのは二つの「悪い知らせ」。一つはあなたに関すること。そしてもう一つも……やはりあなたに関することだ。\n「映画の予告でこんな書き方をしたら、宣伝チームに『文字数稼ぎ』って思われちゃうわね。でも、たまにはこんな『予告通り』の名作に出会えることもあるのよ」",
+       "QuestDesc": "（しばしの沈黙。優雅で正確なそのリズムは、まるで踊っているかのようだ）",
+       "Type": "Quest",
+       "QuestId": 165800009
+      },
+      {
+       "Id": 165800010,
+       "Name": "『ライフ・オブ・レゾネーター』",
+       "Descrtption": "どんなに忙しくても、ルシラーは学園のおすすめスポットをあなたに教えることを忘れない。庭園とは、物語が生まれやすい場所だ。それが怪談であれ、ロマンスであれ。しかし、この学園においては、そこは「リラックスするためだけの場所」であると、教師たちが保証している。\nさあ、小さな庭園へ行こう。丹精込めて手入れされた美しい木々を眺めに。\n「私からのメッセージを期待していたかしら？残念だけど、本当に忙しいのよ」",
+       "QuestDesc": "「恐怖は、生命にとって最も強大な敵と言える。恐怖こそが、生命を打ち負かす唯一の力なのだ」",
+       "Type": "Quest",
+       "QuestId": 165800010
+      },
+      {
+       "Id": 165800011,
+       "Name": "『4½』",
+       "Descrtption": "ルシラーは映画選びに頭を抱えている。彼女はあなたを巻き込み、広大な映画の海からふさわしい一本を探そうとしているのだ。\n図書館へ行き、気に入った映画を選ぼう。\n「人が選ぶ映画には、必ずその人自身が映し出されているものよ。分かりやすい思い出と結びつくこともあれば……フィルムに映り込んだほこりのように、目に見えない影の中に『繋がり』が隠れていることも」",
+       "QuestDesc": "「私はずっと、君を同類だと見なしてきた。私たちには、正気を保つ責任がある」",
+       "Type": "Quest",
+       "QuestId": 165800011
+      },
+      {
+       "Id": 165800012,
+       "Name": "『ジンセイ・イズ・ビューティフル』",
+       "Descrtption": "激務の末、ルシラーはようやくまとまった休息を勝ち取った。\n次の繁忙期が来る前に、このチャンスを逃すまいと彼女はあなたを誘う。何度も先送りになっていた、あの映画を見る約束を果たすために。\n「時間は待ってくれないわ。ラストショー、今開演よ！」",
+       "QuestDesc": "「生きていること……それこそが、最も美しいことだ」",
+       "Type": "Quest",
+       "QuestId": 165800012
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

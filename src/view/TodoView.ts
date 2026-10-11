@@ -164,21 +164,36 @@ export class TodoView extends ItemView {
 		for (const pt of items) {
 			const row = this.row(el, pt);
 			if (pt.state !== "inbox") continue;
+			const suggested = pt.task.suggestedEstimate;
+			const setEstimate = async (n: number) => {
+				await this.plugin.repo.update(pt.task.path, (fm) => {
+					fm.estimate = n;
+				});
+				new Notice(`「${pt.task.title}」の所要時間を ${n} 分にしました`);
+			};
 			const input = row.createEl("input", {
 				cls: "gtodo-estimate",
 				type: "number",
-				attr: { placeholder: "分", min: "0" },
+				attr: { placeholder: suggested != null ? `推定${suggested}` : "分", min: "0" },
 			});
 			input.onclick = (e) => e.stopPropagation();
 			input.onkeydown = async (e) => {
 				if (e.key !== "Enter" || e.isComposing) return;
 				const n = Number(input.value);
 				if (!input.value.trim() || !Number.isFinite(n) || n < 0) return;
-				await this.plugin.repo.update(pt.task.path, (fm) => {
-					fm.estimate = n;
-				});
-				new Notice(`「${pt.task.title}」の所要時間を ${n} 分にしました`);
+				await setEstimate(n);
 			};
+			if (suggested != null) {
+				const adopt = row.createEl("button", {
+					cls: "gtodo-adopt clickable-icon",
+					attr: { "aria-label": `推定値 ${formatMinutes(suggested)} を採用` },
+				});
+				setIcon(adopt, "check");
+				adopt.onclick = async (e) => {
+					e.stopPropagation();
+					await setEstimate(suggested);
+				};
+			}
 		}
 	}
 
@@ -198,6 +213,15 @@ export class TodoView extends ItemView {
 		if (pt.rank != null) title.createSpan({ cls: "gtodo-rank", text: `${pt.rank}` });
 		title.createSpan({ cls: `gtodo-game gtodo-game-${t.game}`, text: GAME_LABEL[t.game] });
 		title.createSpan({ text: t.title });
+		if (t.url) {
+			const url = t.url;
+			const link = title.createSpan({ cls: "gtodo-link clickable-icon", attr: { "aria-label": "元記事を開く" } });
+			setIcon(link, "external-link");
+			link.onclick = (e) => {
+				e.stopPropagation();
+				window.open(url);
+			};
+		}
 
 		const meta: string[] = [];
 		if (lead) meta.push(lead);

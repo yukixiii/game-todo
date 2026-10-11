@@ -86,6 +86,12 @@ export class TaskRepo {
 		if (f) await this.app.fileManager.processFrontMatter(f, fn);
 	}
 
+	/** Rewrites the whole content of a note. */
+	async processContent(path: string, fn: (content: string) => string): Promise<void> {
+		const f = this.file(path);
+		if (f) await this.app.vault.process(f, fn);
+	}
+
 	setStatus(path: string, status: Status): Promise<void> {
 		return this.update(path, (fm) => {
 			fm.status = status;

@@ -1,0 +1,126 @@
+{
+ "Id": 100001,
+ "Name": "とある漂泊する音の始まり・上",
+ "Description": "序章",
+ "MaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_0a.webp",
+ "FemaleTexture": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/ArchiveView/T_ArchiveView_0a.webp",
+ "AreaIcon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/UiArchive/Atlas/SP_ArchiveAreaDragon.webp",
+ "ShowQuestList": [
+  139000025
+ ],
+ "QuestDesc": "すでに残鳴は奏で始めている……あなたはその導きに従い、己の過去を探す旅に出る。それは、新たな、未知に満ち溢れる旅になるだろう。",
+ "Unlock": [
+  {
+   "Id": 100002,
+   "Name": "とある漂泊する音の始まり・下",
+   "Type": 1
+  }
+ ],
+ "Chapters": [
+  {
+   "Title": "Quest_139000025_ChildQuestTip_0_47"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "雲陵谷を出る"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "雲陵谷を出る"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "Quest_139000025_ChildQuestTip_0_63"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "雲陵谷を出る"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "小型信号塔を解放"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "Quest_139000025_ChildQuestTip_0_79"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "パラシュートで無音区に入る"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "？？？を倒す"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Title": "？？？を倒す"
+  },
+  {
+   "Title": "？？？を倒す"
+  },
+  {
+   "Title": "Quest_139000025_ChildQuestTip_0_91"
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  },
+  {
+   "Dialogues": []
+  }
+ ]
+}

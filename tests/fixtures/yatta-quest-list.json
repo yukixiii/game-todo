@@ -1,0 +1,117 @@
+{
+ "response": 200,
+ "data": {
+  "items": {
+   "318": {
+    "id": 318,
+    "type": "iq",
+    "chapterNum": null,
+    "chapterTitle": "もう一つの元素の力",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Element of Different Nature",
+    "chapterCount": 1
+   },
+   "426": {
+    "id": 426,
+    "type": null,
+    "chapterNum": null,
+    "chapterTitle": "座った後の会話",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Paimon's Hint After Sitting",
+    "chapterCount": 1
+   },
+   "1001": {
+    "id": 1001,
+    "type": "aq",
+    "chapterNum": "序章 第一幕",
+    "chapterTitle": "風を捕まえる異邦人",
+    "chapterIcon": "UI_ChapterIcon_Mengde",
+    "chapterImageTitle": "モンド",
+    "route": "The Outlander Who Caught the Wind",
+    "chapterCount": 13
+   },
+   "1002": {
+    "id": 1002,
+    "type": "aq",
+    "chapterNum": "序章 第二幕",
+    "chapterTitle": "涙のない明日のために",
+    "chapterIcon": "UI_ChapterIcon_Mengde",
+    "chapterImageTitle": "モンド",
+    "route": "For a Tomorrow Without Tears",
+    "chapterCount": 15
+   },
+   "1003": {
+    "id": 1003,
+    "type": "aq",
+    "chapterNum": "序章 第三幕",
+    "chapterTitle": "龍と自由の歌",
+    "chapterIcon": "UI_ChapterIcon_Mengde",
+    "chapterImageTitle": "モンド",
+    "route": "Song of the Dragon and Freedom",
+    "chapterCount": 8
+   },
+   "1004": {
+    "id": 1004,
+    "type": "aq",
+    "chapterNum": "間章 第四幕",
+    "chapterTitle": "背理",
+    "chapterIcon": "UI_ChapterIcon_Mengde",
+    "chapterImageTitle": "間章",
+    "route": "Paralogism",
+    "chapterCount": 3
+   },
+   "1101": {
+    "id": 1101,
+    "type": "aq",
+    "chapterNum": "第一章 第一幕",
+    "chapterTitle": "浮世浮生千岩間",
+    "chapterIcon": "UI_ChapterIcon_Liyue",
+    "chapterImageTitle": "璃月",
+    "route": "Of the Land Amidst Monoliths",
+    "chapterCount": 6
+   },
+   "1102": {
+    "id": 1102,
+    "type": "aq",
+    "chapterNum": "第一章 第二幕",
+    "chapterTitle": "久遠の体との別れ",
+    "chapterIcon": "UI_ChapterIcon_Liyue",
+    "chapterImageTitle": "璃月",
+    "route": "Farewell, Archaic Lord",
+    "chapterCount": 7
+   },
+   "1105": {
+    "id": 1105,
+    "type": "wq",
+    "chapterNum": "第一章 第四幕·プロローグ",
+    "chapterTitle": "ダインスレイヴ",
+    "chapterIcon": "UI_ChapterIcon_Traveler",
+    "chapterImageTitle": "旅人",
+    "route": "Dainsleif",
+    "chapterCount": 1
+   },
+   "2001": {
+    "id": 2001,
+    "type": "lq",
+    "chapterNum": "孔雀羽の章 第一幕",
+    "chapterTitle": "海賊の秘宝",
+    "chapterIcon": "UI_ChapterIcon_Kaeya",
+    "chapterImageTitle": "ガイア",
+    "route": "Secret Pirate Treasure",
+    "chapterCount": 3
+   },
+   "2002": {
+    "id": 2002,
+    "type": "lq",
+    "chapterNum": "夜梟の章 第一幕",
+    "chapterTitle": "闇夜の英雄のアリバイ",
+    "chapterIcon": "UI_ChapterIcon_Diluc",
+    "chapterImageTitle": "ディルック",
+    "route": "Darknight Hero's Alibi",
+    "chapterCount": 4
+   }
+  }
+ }
+}

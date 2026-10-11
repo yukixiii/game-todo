@@ -85,6 +85,12 @@
 	align-items: baseline;
 	overflow-wrap: anywhere;
 }
+.gtodo-link {
+	flex: none;
+	align-self: center;
+	padding: 0 2px;
+	--icon-size: 14px;
+}
 .gtodo-rank {
 	color: var(--text-faint);
 	font-variant-numeric: tabular-nums;
@@ -120,7 +126,10 @@
 	margin-bottom: 8px;
 }
 .gtodo-estimate {
-	width: 64px;
+	width: 72px;
+}
+.gtodo-adopt {
+	flex: none;
 }
 .gtodo-done summary {
 	margin-top: 16px;
