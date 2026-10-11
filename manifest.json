@@ -1,0 +1,9 @@
+{
+	"id": "game-todo",
+	"name": "Game ToDo",
+	"version": "0.1.0",
+	"minAppVersion": "1.6.6",
+	"description": "Genshin Impact / Wuthering Waves event and quest ToDo with prerequisites, deadline-aware scheduling, recurring tasks, and event import.",
+	"author": "yuki",
+	"isDesktopOnly": false
+}

@@ -1,0 +1,166 @@
+.gtodo-view {
+	padding: 0;
+}
+.gtodo-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 8px 12px 4px;
+}
+.gtodo-toolbar select {
+	flex: 1;
+}
+.gtodo-tabs {
+	display: flex;
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 0 8px;
+}
+.gtodo-tab {
+	padding: 6px 8px;
+	cursor: pointer;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+	border-bottom: 2px solid transparent;
+}
+.gtodo-tab.is-active {
+	color: var(--text-normal);
+	border-bottom-color: var(--interactive-accent);
+}
+.gtodo-count {
+	margin-left: 4px;
+	padding: 0 5px;
+	border-radius: 8px;
+	font-size: var(--font-ui-smaller);
+	background: var(--background-modifier-hover);
+}
+.gtodo-body {
+	padding: 8px 12px;
+}
+.gtodo-window,
+.gtodo-subhead {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 4px 0 8px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+.gtodo-subhead.mod-warning {
+	color: var(--text-error);
+	margin-top: 16px;
+}
+.gtodo-empty {
+	color: var(--text-faint);
+	font-size: var(--font-ui-small);
+	padding: 8px 0;
+}
+.gtodo-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 6px 4px;
+	border-radius: var(--radius-s);
+	cursor: pointer;
+}
+.gtodo-row:hover {
+	background: var(--background-modifier-hover);
+}
+.gtodo-row.is-late {
+	box-shadow: inset 3px 0 0 var(--text-error);
+}
+.gtodo-row.is-done .gtodo-title {
+	text-decoration: line-through;
+	color: var(--text-faint);
+}
+.gtodo-row input[type="checkbox"] {
+	margin-top: 3px;
+}
+.gtodo-main {
+	flex: 1;
+	min-width: 0;
+}
+.gtodo-title {
+	display: flex;
+	gap: 6px;
+	align-items: baseline;
+	overflow-wrap: anywhere;
+}
+.gtodo-rank {
+	color: var(--text-faint);
+	font-variant-numeric: tabular-nums;
+	font-size: var(--font-ui-smaller);
+}
+.gtodo-game {
+	flex: none;
+	font-size: var(--font-ui-smaller);
+	padding: 0 4px;
+	border-radius: var(--radius-s);
+	color: var(--text-on-accent);
+}
+.gtodo-game-genshin {
+	background: var(--color-blue);
+}
+.gtodo-game-wuwa {
+	background: var(--color-purple);
+}
+.gtodo-meta {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}
+.gtodo-row.is-late .gtodo-meta {
+	color: var(--text-error);
+}
+.gtodo-reason,
+.gtodo-error {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-warning);
+}
+.gtodo-error {
+	color: var(--text-error);
+	margin-bottom: 8px;
+}
+.gtodo-estimate {
+	width: 64px;
+}
+.gtodo-done summary {
+	margin-top: 16px;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	cursor: pointer;
+}
+.gtodo-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-bottom: 8px;
+}
+.gtodo-chip {
+	padding: 2px 8px;
+	border-radius: 12px;
+	background: var(--background-modifier-hover);
+	font-size: var(--font-ui-small);
+}
+.gtodo-chip-x {
+	margin-left: 6px;
+	cursor: pointer;
+	color: var(--text-muted);
+}
+.gtodo-import-list {
+	max-height: 50vh;
+	overflow-y: auto;
+	margin: 8px 0;
+}
+.gtodo-import-row {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	padding: 4px 0;
+	cursor: pointer;
+}
+.gtodo-perday {
+	width: 48px;
+}
+.gtodo-confirm-list {
+	max-height: 40vh;
+	overflow-y: auto;
+}
