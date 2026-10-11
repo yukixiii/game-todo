@@ -106,4 +106,10 @@ describe("news articles", () => {
 			"## リンク\n- 元記事: https://a\n- [\\[告知\\] B](https://b)\n",
 		);
 	});
+
+	it("writes links containing '::' as HTML so Dataview doesn't take them for inline fields", () => {
+		expect(linksMarkdown(undefined, [{ label: "wikiで「A&B」を検索", url: "https://w/::cmd/search?word=A" }])).toBe(
+			'## リンク\n- <a href="https://w/::cmd/search?word=A">wikiで「A&#38;B」を検索</a>\n',
+		);
+	});
 });

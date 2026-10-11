@@ -198,13 +198,25 @@ function originalLine(url: string, label = "元記事"): string {
 	return `- ${label}: ${url}`;
 }
 
+/**
+ * A link whose URL contains "::" (wikiwiki's `::cmd/search`) is written as an HTML anchor: in
+ * `[label](url)` Dataview reads `(url-prefix:: rest)` as an inline field and renders it as one in live
+ * preview. The wiki doesn't accept the colons percent-encoded.
+ */
+function linkMarkdown(l: NoteLink): string {
+	if (l.url.includes("::")) {
+		const html = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
+		return `<a href="${html(l.url)}">${html(l.label)}</a>`;
+	}
+	return `[${l.label.replace(/[[\]]/g, (c) => `\\${c}`)}](${l.url})`;
+}
+
 /** Markdown section listing the links of a note. */
 export function linksMarkdown(url: string | undefined, links: NoteLink[] = [], urlLabel?: string): string {
 	if (!url && !links.length) return "";
-	const esc = (s: string) => s.replace(/[[\]]/g, (c) => `\\${c}`);
 	const lines = [LINKS_HEADING];
 	if (url) lines.push(originalLine(url, urlLabel));
-	for (const l of links) lines.push(`- [${esc(l.label)}](${l.url})`);
+	for (const l of links) lines.push(`- ${linkMarkdown(l)}`);
 	return lines.join("\n") + "\n";
 }
 
