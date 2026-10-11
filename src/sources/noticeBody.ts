@@ -110,21 +110,30 @@ function cleanListItem(line: string): string {
 	return line.replace(/^[-・•※]\s*/, "").trim();
 }
 
-export function parseNoticeBody(html: string, defaultOffset: number): NoticeInfo {
-	const sections = extractSections(htmlToLines(html));
-	const period = parsePeriod(pick(sections, PERIOD_KEYS).join("\n"), defaultOffset);
-	const raw = pick(sections, CONDITION_KEYS, CONDITION_HEADING);
-	// "※…" notes (alternative routes, epilogues) are kept as text but not used for links.
-	const linkable = raw.filter((l) => !/^\s*※/.test(l)).map(cleanListItem);
-	const conditions = raw.map(cleanListItem).filter(Boolean);
-	// Recommendations ("…をクリア後にプレイすると、より良い体験を…") are kept as text but not linked.
-	const conditionQuests = [
+/** Like cleanListItem, but keeps a leading "※" so stored conditions still tell notes from requirements. */
+function cleanConditionItem(line: string): string {
+	return line.replace(/^[-・•]\s*/, "").trim();
+}
+
+/**
+ * Quest names quoted (「…」) in condition lines, for prerequisite links. "※…" notes (alternative routes,
+ * epilogues) and recommendations ("…をクリア後にプレイすると、より良い体験を…") are not requirements.
+ */
+export function linkableQuestNames(conditions: string[]): string[] {
+	return [
 		...new Set(
-			linkable
-				.filter((c) => !/体験|お楽しみ|おすすめ|推奨/.test(c))
+			conditions
+				.filter((c) => !/^\s*※/.test(c) && !/体験|お楽しみ|おすすめ|推奨/.test(c))
 				.flatMap((c) => [...c.matchAll(/「([^」]+)」/g)].map((m) => m[1].trim())),
 		),
 	].filter(Boolean);
+}
+
+export function parseNoticeBody(html: string, defaultOffset: number): NoticeInfo {
+	const sections = extractSections(htmlToLines(html));
+	const period = parsePeriod(pick(sections, PERIOD_KEYS).join("\n"), defaultOffset);
+	const conditions = pick(sections, CONDITION_KEYS, CONDITION_HEADING).map(cleanConditionItem).filter(Boolean);
+	const conditionQuests = linkableQuestNames(conditions);
 	const rewards = pick(sections, REWARD_KEYS).map(cleanListItem).filter(Boolean).slice(0, 5);
 	return { ...period, conditions, conditionQuests, rewards };
 }

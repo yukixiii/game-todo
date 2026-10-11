@@ -120,6 +120,39 @@ describe("plugin with a fake vault", () => {
 		expect(ev.deadline).toBe(jst("2026-10-26T04:59"));
 	});
 
+	it("does not link quests quoted only in ※ notes or recommendations of existing tasks", async () => {
+		const { app, plugin } = setup();
+		app.write(
+			"GameTodo/Inbox/勝者は誰だ.md",
+			[
+				"---",
+				"gtodo: task",
+				"game: genshin",
+				"kind: event",
+				"estimate: 10",
+				"prereqs: []",
+				"unlock:",
+				'  - "魔神任務 序章・第三幕「龍と自由の歌」をクリア"',
+				'  - "魔神任務第七章・第四幕「冥府へのレクイエム」をクリア後にプレイしていただくことで、より良いイベント体験をお楽しみいただけます。"',
+				'  - "※期間中に「死魂の夜想曲」をクリアすると、エピローグ任務を受注できます。"',
+				'source: "hoyoverse-ann:21887"',
+				"---",
+				"",
+			].join("\n"),
+		);
+		const quest = (id: number, title: string) => ({
+			sourceId: `yatta-quest:${id}`,
+			game: "genshin" as const,
+			title,
+			kind: "quest" as const,
+			prereqSourceIds: [],
+		});
+		await plugin.applyImport([quest(1703, "冥府へのレクイエム"), quest(1702, "死魂の夜想曲"), quest(1003, "龍と自由の歌")]);
+
+		const ev = plugin.repo.loadTasks().find((t) => t.title === "勝者は誰だ")!;
+		expect(ev.prereqs).toEqual(["GameTodo/Inbox/龍と自由の歌.md"]);
+	});
+
 	it("fills missing unlock conditions on re-import without touching other fields", async () => {
 		const { app, plugin } = setup();
 		const path = "GameTodo/Inbox/ev.md";

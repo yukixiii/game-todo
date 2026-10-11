@@ -98,6 +98,8 @@ describe("announcement body", () => {
 			8,
 		);
 		expect(bonus.conditions).toHaveLength(2);
+		// The "※" stays in the stored text so later linking can still skip it.
+		expect(bonus.conditions[1]).toMatch(/^※期間中に/);
 		expect(bonus.conditionQuests).toEqual(["死魂の夜想曲"]);
 	});
 

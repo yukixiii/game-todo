@@ -9,6 +9,7 @@ import { genshinSource } from "./sources/genshin";
 import { genshinQuestCatalog } from "./sources/genshinQuests";
 import { jsonFeedSource } from "./sources/jsonFeed";
 import { addLinksToContent, attachArticles, fetchNews, linksMarkdown } from "./sources/news";
+import { linkableQuestNames } from "./sources/noticeBody";
 import { QuestCatalog, QuestDetail, QuestEntry, questToImported, scaleEstimate } from "./sources/quests";
 import { FetchJson, ImportedEvent, Source } from "./sources/types";
 import { WUWA_NOTICE_URL, wuwaSource } from "./sources/wuwa";
@@ -415,13 +416,16 @@ export default class GameTodoPlugin extends Plugin {
 		);
 	}
 
-	/** Adds prerequisite links to existing tasks whose unlock conditions quote a newly created note. */
+	/**
+	 * Adds prerequisite links to existing tasks whose unlock conditions quote a newly created note
+	 * (same exclusions as at import: "※" notes and recommendations).
+	 */
 	private async linkConditionsTo(tasks: Task[], titles: string[]): Promise<number> {
 		if (!titles.length) return 0;
 		const names = new Set(titles);
 		let n = 0;
 		for (const t of tasks) {
-			const add = [...new Set(t.unlock.flatMap(quotedNames))].filter((q) => names.has(q));
+			const add = linkableQuestNames(t.unlock).filter((q) => names.has(q));
 			if (!add.length) continue;
 			await this.repo.update(t.path, (fm) => {
 				const cur: unknown[] = Array.isArray(fm.prereqs) ? fm.prereqs : fm.prereqs ? [fm.prereqs] : [];
@@ -439,10 +443,6 @@ export default class GameTodoPlugin extends Plugin {
 
 function errorText(e: unknown): string {
 	return e instanceof Error ? e.message : String(e);
-}
-
-function quotedNames(text: string): string[] {
-	return [...text.matchAll(/「([^」]+)」/g)].map((m) => m[1].trim());
 }
 
 /** The suggestion is refreshed only while the user has not confirmed an estimate. */
