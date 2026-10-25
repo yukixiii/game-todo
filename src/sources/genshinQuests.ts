@@ -1,4 +1,4 @@
-import { chain, questCatalog, QuestCatalog, QuestDetail, QuestEntry } from "./quests";
+import { chain, EPILOGUE_RANK, questCatalog, QuestCatalog, QuestDetail, QuestEntry, splitOrdinal } from "./quests";
 import { FetchJson } from "./types";
 
 /** Project Amber (yatta.moe) quest archive, extracted from game data. */
@@ -12,6 +12,8 @@ interface Chapter {
 	chapterNum: string | null;
 	chapterTitle: string | null;
 	chapterIcon: string | null;
+	chapterImageTitle?: string | null;
+	route?: string | null;
 }
 
 /** "#{MATEAVATAR#...}たち" style placeholders -> "旅人". */
@@ -40,6 +42,8 @@ export function parseGenshinQuestList(json: unknown): QuestEntry[] {
 			prereqSourceIds: [],
 			detailUrl: `${GENSHIN_QUEST_LIST_URL}/${c.id}`,
 			pageUrl: `https://gi.yatta.moe/jp/archive/quest/${c.id}`,
+			// English name, and the character (legend quests) or region shown on the chapter card.
+			keywords: [c.route, c.chapterImageTitle].filter((k): k is string => !!k),
 		});
 	}
 
@@ -56,7 +60,53 @@ export function parseGenshinQuestList(json: unknown): QuestEntry[] {
 		if (lastMain) byId.get(list[0].id)!.prereqSourceIds.unshift(byId.get(lastMain.id)!.sourceId);
 		prevArchon = list;
 	}
+	chainSeries(chapters.filter((c) => c.type === "wq").map((c) => byId.get(c.id)!), false);
+	chainSeries(chapters.filter((c) => c.type === "eq").map((c) => byId.get(c.id)!), true);
 	return chapters.map((c) => byId.get(c.id)!);
+}
+
+type Member = { rank: number; e: QuestEntry };
+
+/**
+ * World / event quest series are named "<series>·第一章" in the chapter number, or "<series>·其の一" in the
+ * title when there is no chapter number. Entries are chained in story order (ids do not follow it).
+ * Siblings without an ordinal (お茶会への再招待・<character> ...) are left unchained, since they may be
+ * played in any order. "<quest>·後日談" requires "<quest>" when exactly one quest of the type has that name.
+ *
+ * Repeated positions leave a world quest series unchained. Events reuse their names across years
+ * (風花祭·1…4, then 風花祭·1…3), so with `splitEditions` a repeated position instead starts a new edition
+ * (entries come in id order).
+ */
+function chainSeries(list: QuestEntry[], splitEditions: boolean): void {
+	const byTitle = new Map<string, QuestEntry[]>();
+	for (const e of list) byTitle.set(e.title, [...(byTitle.get(e.title) ?? []), e]);
+	const groups = new Map<string, Member[]>();
+	for (const e of list) {
+		const s = splitOrdinal(e.label || e.title);
+		if (!s) continue;
+		groups.set(s.base, [...(groups.get(s.base) ?? []), { rank: s.rank, e }]);
+		if (!e.label) e.label = s.base;
+	}
+	for (const [base, members] of groups) {
+		for (const edition of splitEditions ? editions(members) : [members]) {
+			edition.sort((a, b) => a.rank - b.rank);
+			if (new Set(edition.map((m) => m.rank)).size < edition.length) continue;
+			const entries = edition.map((m) => m.e);
+			const main = byTitle.get(base);
+			if (edition[0].rank === EPILOGUE_RANK && main?.length === 1) entries.unshift(main[0]);
+			chain(entries);
+		}
+	}
+}
+
+/** Splits id-ordered members where a position repeats. */
+function editions(members: Member[]): Member[][] {
+	const out: Member[][] = [[]];
+	for (const m of members) {
+		if (out[out.length - 1].some((x) => x.rank === m.rank)) out.push([]);
+		out[out.length - 1].push(m);
+	}
+	return out;
 }
 
 interface DetailResponse {

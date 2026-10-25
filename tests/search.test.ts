@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { Task } from "../src/model";
 import { Capacity, schedule } from "../src/scheduler";
-import { DEFAULT_QUERY, normalizeQuery, queryTasks, TaskQuery } from "../src/search";
+import { DEFAULT_QUERY, matchesWords, normalizeQuery, queryTasks, TaskQuery } from "../src/search";
 
 // 2026-10-12 is a Monday. TZ is Asia/Tokyo (see vitest.config.mjs).
 const at = (d: number, h = 0, mi = 0) => new Date(2026, 9, d, h, mi).getTime();
@@ -73,5 +73,17 @@ describe("queryTasks", () => {
 			queryTasks(r2, normalizeQuery({ ...DEFAULT_QUERY, ...q }), now).map((p) => p.task.title);
 		expect(sorted({ sort: "minutes" })).toEqual(["本体", "単独", "前提"]);
 		expect(sorted({ sort: "totalMinutes" })).toEqual(["単独", "前提", "本体"]);
+	});
+});
+
+describe("matchesWords", () => {
+	it("ANDs words, excludes -words and folds width, case and middle dots", () => {
+		const hay = "遠方より来たる朋友·其の二\nA Friend From Afar II";
+		expect(matchesWords(hay, "")).toBe(true);
+		expect(matchesWords(hay, "朋友 其の")).toBe(true);
+		expect(matchesWords(hay, "朋友 -其の")).toBe(false);
+		expect(matchesWords(hay, "朋友・其の二")).toBe(true); // ・ matches the U+00B7 in game data
+		expect(matchesWords(hay, "ｆｒｉｅｎｄ")).toBe(true);
+		expect(matchesWords(hay, "friend 魔女")).toBe(false);
 	});
 });

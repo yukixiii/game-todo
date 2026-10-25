@@ -72,16 +72,24 @@ export function totalMinutes(pt: PlannedTask): number | undefined {
 
 function haystack(pt: PlannedTask): string {
 	const t = pt.task;
-	return [t.title, t.path, GAME_LABEL[t.game], KIND_LABEL[t.kind], ...t.unlock, ...pt.reasons, t.source ?? ""]
-		.join("\n")
-		.toLowerCase();
+	return [t.title, t.path, GAME_LABEL[t.game], KIND_LABEL[t.kind], ...t.unlock, ...pt.reasons, t.source ?? ""].join("\n");
+}
+
+/** Folds width and case, and the U+00B7 middle dot of game data to ・. */
+export function normalizeSearch(s: string): string {
+	return s.normalize("NFKC").toLowerCase().replace(/·/g, "・");
+}
+
+/** Space separated words, all must be contained in `hay`; "-word" excludes. */
+export function matchesWords(hay: string, text: string): boolean {
+	const words = normalizeSearch(text).split(/\s+/).filter(Boolean);
+	if (!words.length) return true;
+	const h = normalizeSearch(hay);
+	return words.every((w) => (w.startsWith("-") && w.length > 1 ? !h.includes(w.slice(1)) : h.includes(w)));
 }
 
 function matchesText(pt: PlannedTask, text: string): boolean {
-	const words = text.toLowerCase().split(/\s+/).filter(Boolean);
-	if (!words.length) return true;
-	const hay = haystack(pt);
-	return words.every((w) => (w.startsWith("-") && w.length > 1 ? !hay.includes(w.slice(1)) : hay.includes(w)));
+	return matchesWords(haystack(pt), text);
 }
 
 function endOfDay(now: number): number {

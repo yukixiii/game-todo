@@ -5,7 +5,7 @@ import { parseGenshinQuestDetail, parseGenshinQuestList } from "../src/sources/g
 import { parseJsonFeed } from "../src/sources/jsonFeed";
 import { parseNoticeBody, parsePeriod } from "../src/sources/noticeBody";
 import { estimateEvent } from "../src/sources/eventEstimate";
-import { questToImported, scaleEstimate } from "../src/sources/quests";
+import { ordinalRank, questHaystack, questToImported, scaleEstimate, splitOrdinal } from "../src/sources/quests";
 import { parseWuwaNotices } from "../src/sources/wuwa";
 import { parseWuwaStoryDetail, parseWuwaStoryList } from "../src/sources/wuwaQuests";
 
@@ -187,6 +187,75 @@ describe("quest catalogs", () => {
 		expect(pre(1101)).toEqual(["yatta-quest:1003"]);
 		expect(pre(2002)).toEqual([]); // different character from 2001
 		expect(q.some((e) => e.sourceId === "yatta-quest:426")).toBe(false); // untyped
+	});
+
+	it("chains Genshin world quest series in story order", () => {
+		const q = parseGenshinQuestList(load("yatta-quest-list.json"));
+		const get = (id: number) => q.find((e) => e.sourceId === `yatta-quest:${id}`)!;
+		const pre = (id: number) => get(id).prereqSourceIds.map((s) => Number(s.split(":")[1]));
+		// Chapter number "諧律のカンティクル·序曲 … 最終章"; ids are not in story order.
+		expect(pre(10183)).toEqual([]);
+		expect(pre(10184)).toEqual([10183]);
+		expect(pre(10182)).toEqual([10184]);
+		expect(pre(10181)).toEqual([10182]);
+		expect(pre(10185)).toEqual([10181]);
+		// Title "からくり調理法·一/二/三" (一 has the largest id), "遠方より来たる朋友·其の一…四".
+		expect(pre(71500)).toEqual([]);
+		expect(pre(70501)).toEqual([71500]);
+		expect(pre(70500)).toEqual([70501]);
+		expect(pre(40149)).toEqual([40148]);
+		expect(get(40149).label).toBe("遠方より来たる朋友");
+		// "…·後日談" requires the quest of that name; no such quest for 思いがけない依頼.
+		expect(pre(70510)).toEqual([70502]);
+		expect(pre(70070)).toEqual([]);
+		// Not ordinal (七聖編, character names, 概要/結論): left unchained.
+		expect(pre(70515)).toEqual([]);
+		expect(pre(73357)).toEqual([]);
+		expect([71502, 71503, 71507, 71508].flatMap(pre)).toEqual([]);
+		// Repeated positions: left unchained.
+		const wq = (id: number, chapterTitle: string) => ({ id, type: "wq", chapterNum: null, chapterTitle, chapterIcon: null });
+		const dup = parseGenshinQuestList({ data: { items: { 1: wq(1, "試し·其の一"), 2: wq(2, "試し·其の一"), 3: wq(3, "試し·其の二") } } });
+		expect(dup.flatMap((e) => e.prereqSourceIds)).toEqual([]);
+	});
+
+	it("chains Genshin event quests per edition", () => {
+		const q = parseGenshinQuestList(load("yatta-quest-list.json"));
+		const pre = (id: number) => q.find((e) => e.sourceId === `yatta-quest:${id}`)!.prereqSourceIds.map((s) => Number(s.split(":")[1]));
+		expect(pre(10272)).toEqual([10271]); // 帰夏！映影？千霊祭！ 第二幕
+		expect(pre(10273)).toEqual([10272]);
+		// 風花祭·1…4 and a later 風花祭·1…3 are separate editions.
+		expect(pre(10024)).toEqual([10023]);
+		expect(pre(10136)).toEqual([]);
+		expect(pre(10138)).toEqual([10137]);
+		// "…童話の王国！2ページ目" / "おまけページ", "プレゼント2"; the エピローグ has a smaller id than 第一幕.
+		expect(pre(10193)).toEqual([10192]);
+		expect(pre(10195)).toEqual([10194]);
+		expect(pre(10208)).toEqual([10207]);
+		expect(pre(10268)).toEqual([]);
+		expect(pre(10196)).toEqual([10270]);
+	});
+
+	it("makes Genshin quests searchable by English name and character", () => {
+		const q = parseGenshinQuestList(load("yatta-quest-list.json"));
+		const hay = questHaystack(q.find((e) => e.sourceId === "yatta-quest:2001")!);
+		expect(hay).toContain("ガイア");
+		expect(hay).toContain("Secret Pirate Treasure");
+		expect(hay).toContain("伝説任務");
+	});
+
+	it("reads ordinal words", () => {
+		expect([ordinalRank("序章"), ordinalRank("第三幕"), ordinalRank("其の十二"), ordinalRank("２０")]).toEqual([0, 3, 12, 20]);
+		expect([ordinalRank("最終章"), ordinalRank("後日談！"), ordinalRank("七聖編"), ordinalRank("一二")]).toEqual([
+			900, 1000, undefined, undefined,
+		]);
+		expect(splitOrdinal("「アラン・スミシー」——フィッシュルの作者・エピローグ")).toEqual({
+			base: "「アラン・スミシー」——フィッシュルの作者",
+			rank: 1000,
+		});
+		expect(splitOrdinal("森林書 第二章")).toEqual({ base: "森林書", rank: 2 });
+		expect(splitOrdinal("エピローグ")).toBeUndefined();
+		expect(["第二首", "第二回", "第二ラウンド", "二日目", "プレゼント2", "中"].map(ordinalRank)).toEqual([2, 2, 2, 2, 2, 2]);
+		expect(splitOrdinal("陽夏！悪龍？童話の王国！おまけページ")).toEqual({ base: "陽夏！悪龍？童話の王国！", rank: 1000 });
 	});
 
 	it("counts Genshin steps and suggests an estimate", () => {

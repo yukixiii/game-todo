@@ -111,6 +111,436 @@
     "chapterImageTitle": "ディルック",
     "route": "Darknight Hero's Alibi",
     "chapterCount": 4
+   },
+   "10021": {
+    "id": 10021,
+    "type": "eq",
+    "chapterNum": "風花祭·1",
+    "chapterTitle": "花と雲の詩",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "Ode to Flower and Cloud",
+    "chapterCount": 1
+   },
+   "10022": {
+    "id": 10022,
+    "type": "eq",
+    "chapterNum": "風花祭·2",
+    "chapterTitle": "雲と霧の手紙",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "Missive of Cloud and Fog",
+    "chapterCount": 1
+   },
+   "10023": {
+    "id": 10023,
+    "type": "eq",
+    "chapterNum": "風花祭·3",
+    "chapterTitle": "霧と風の境",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "Realm of Fog and Wind",
+    "chapterCount": 1
+   },
+   "10024": {
+    "id": 10024,
+    "type": "eq",
+    "chapterNum": "風花祭·4",
+    "chapterTitle": "風と花の夢",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "Dream of Wind and Flowers",
+    "chapterCount": 1
+   },
+   "10136": {
+    "id": 10136,
+    "type": "eq",
+    "chapterNum": "風花祭·1",
+    "chapterTitle": "湖畔に集う異郷の客",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "A Gathering of Outlanders",
+    "chapterCount": 1
+   },
+   "10137": {
+    "id": 10137,
+    "type": "eq",
+    "chapterNum": "風花祭·2",
+    "chapterTitle": "人混みに隠されし予言の謎",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "A Riddle Amidst the Crowds",
+    "chapterCount": 1
+   },
+   "10138": {
+    "id": 10138,
+    "type": "eq",
+    "chapterNum": "風花祭·3",
+    "chapterTitle": "空に在る至福の謎",
+    "chapterIcon": "UI_ChapterIcon_FleurFair",
+    "chapterImageTitle": "",
+    "route": "Joy Above the Clouds",
+    "chapterCount": 1
+   },
+   "10181": {
+    "id": 10181,
+    "type": "wq",
+    "chapterNum": "諧律のカンティクル·第三章",
+    "chapterTitle": "ファルサリアのラプソディ",
+    "chapterIcon": "UI_ChapterIcon_Fontaine",
+    "chapterImageTitle": "",
+    "route": "Pharsalia's Rhapsody",
+    "chapterCount": 3
+   },
+   "10182": {
+    "id": 10182,
+    "type": "wq",
+    "chapterNum": "諧律のカンティクル·第二章",
+    "chapterTitle": "縛られた囚人",
+    "chapterIcon": "UI_ChapterIcon_Fontaine",
+    "chapterImageTitle": "",
+    "route": "Prisoner in Shackles",
+    "chapterCount": 1
+   },
+   "10183": {
+    "id": 10183,
+    "type": "wq",
+    "chapterNum": "諧律のカンティクル·序曲",
+    "chapterTitle": "奇異な町の夢",
+    "chapterIcon": "UI_ChapterIcon_Fontaine",
+    "chapterImageTitle": "",
+    "route": "Petrichorror Dream",
+    "chapterCount": 1
+   },
+   "10184": {
+    "id": 10184,
+    "type": "wq",
+    "chapterNum": "諧律のカンティクル·第一章",
+    "chapterTitle": "海の魔王の宮殿にて",
+    "chapterIcon": "UI_ChapterIcon_Fontaine",
+    "chapterImageTitle": "",
+    "route": "In the Hall of the Sea King",
+    "chapterCount": 1
+   },
+   "10185": {
+    "id": 10185,
+    "type": "wq",
+    "chapterNum": "諧律のカンティクル·最終章",
+    "chapterTitle": "鎮魂曲",
+    "chapterIcon": "UI_ChapterIcon_Fontaine",
+    "chapterImageTitle": "",
+    "route": "Requiem",
+    "chapterCount": 1
+   },
+   "10192": {
+    "id": 10192,
+    "type": "eq",
+    "chapterNum": "陽夏！悪龍？童話の王国！1ページ目",
+    "chapterTitle": "雨降らぬ森から始まる物語",
+    "chapterIcon": "UI_ChapterIcon_FairyTales",
+    "chapterImageTitle": "",
+    "route": "The Story Begins in a Forest Without Rain",
+    "chapterCount": 1
+   },
+   "10193": {
+    "id": 10193,
+    "type": "eq",
+    "chapterNum": "陽夏！悪龍？童話の王国！2ページ目",
+    "chapterTitle": "星空を翔けた者たち",
+    "chapterIcon": "UI_ChapterIcon_FairyTales",
+    "chapterImageTitle": "",
+    "route": "They Once Walked the Starry Sky",
+    "chapterCount": 1
+   },
+   "10194": {
+    "id": 10194,
+    "type": "eq",
+    "chapterNum": "陽夏！悪龍？童話の王国！3ページ目",
+    "chapterTitle": "世界の果てまで",
+    "chapterIcon": "UI_ChapterIcon_FairyTales",
+    "chapterImageTitle": "",
+    "route": "Until the End of the World",
+    "chapterCount": 1
+   },
+   "10195": {
+    "id": 10195,
+    "type": "eq",
+    "chapterNum": "陽夏！悪龍？童話の王国！おまけページ",
+    "chapterTitle": "後日談",
+    "chapterIcon": "UI_ChapterIcon_FairyTales",
+    "chapterImageTitle": "",
+    "route": "Afterword",
+    "chapterCount": 1
+   },
+   "10196": {
+    "id": 10196,
+    "type": "eq",
+    "chapterNum": "天を翔ける玉輪の軌跡・エピローグ",
+    "chapterTitle": "白馬有閑遊記",
+    "chapterIcon": "UI_ChapterIcon_SeaLamp",
+    "chapterImageTitle": "",
+    "route": "White Horse's Leisurely Journey",
+    "chapterCount": 1
+   },
+   "10207": {
+    "id": 10207,
+    "type": "eq",
+    "chapterNum": "キャンディと薔薇の歌 プレゼント1",
+    "chapterTitle": "彼女にサプライズを",
+    "chapterIcon": "UI_ChapterIcon_SumeruBirth",
+    "chapterImageTitle": "",
+    "route": "Give Her Surprises",
+    "chapterCount": 1
+   },
+   "10208": {
+    "id": 10208,
+    "type": "eq",
+    "chapterNum": "キャンディと薔薇の歌 プレゼント2",
+    "chapterTitle": "彼女に甘さを",
+    "chapterIcon": "UI_ChapterIcon_SumeruBirth",
+    "chapterImageTitle": "",
+    "route": "Give Her Sweetness",
+    "chapterCount": 1
+   },
+   "10268": {
+    "id": 10268,
+    "type": "eq",
+    "chapterNum": "天を翔ける玉輪の軌跡 第一幕",
+    "chapterTitle": "雲の間で",
+    "chapterIcon": "UI_ChapterIcon_SeaLamp",
+    "chapterImageTitle": "",
+    "route": "The Realm of Clouds",
+    "chapterCount": 1
+   },
+   "10269": {
+    "id": 10269,
+    "type": "eq",
+    "chapterNum": "天を翔ける玉輪の軌跡 第二幕",
+    "chapterTitle": "岩の間で",
+    "chapterIcon": "UI_ChapterIcon_SeaLamp",
+    "chapterImageTitle": "",
+    "route": "The Realm of Rocks",
+    "chapterCount": 1
+   },
+   "10270": {
+    "id": 10270,
+    "type": "eq",
+    "chapterNum": "天を翔ける玉輪の軌跡 第三幕",
+    "chapterTitle": "人の間で",
+    "chapterIcon": "UI_ChapterIcon_SeaLamp",
+    "chapterImageTitle": "",
+    "route": "The Realm of People",
+    "chapterCount": 1
+   },
+   "10271": {
+    "id": 10271,
+    "type": "eq",
+    "chapterNum": "帰夏！映影？千霊祭！ 第一幕",
+    "chapterTitle": "ふたたび会えたなら",
+    "chapterIcon": "UI_ChapterIcon_Aquarium",
+    "chapterImageTitle": "",
+    "route": "Should We Meet Again",
+    "chapterCount": 1
+   },
+   "10272": {
+    "id": 10272,
+    "type": "eq",
+    "chapterNum": "帰夏！映影？千霊祭！ 第二幕",
+    "chapterTitle": "失ったもの",
+    "chapterIcon": "UI_ChapterIcon_Aquarium",
+    "chapterImageTitle": "",
+    "route": "Those We Have Lost",
+    "chapterCount": 1
+   },
+   "10273": {
+    "id": 10273,
+    "type": "eq",
+    "chapterNum": "帰夏！映影？千霊祭！ 第三幕",
+    "chapterTitle": "かつてこの手にあったもの",
+    "chapterIcon": "UI_ChapterIcon_Aquarium",
+    "chapterImageTitle": "",
+    "route": "Those We Have Kept",
+    "chapterCount": 2
+   },
+   "40143": {
+    "id": 40143,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "遠方より来たる朋友·其の一",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Receiver of Friends From Afar: Part I",
+    "chapterCount": 1
+   },
+   "40147": {
+    "id": 40147,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "遠方より来たる朋友·其の二",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Receiver of Friends From Afar: Part II",
+    "chapterCount": 1
+   },
+   "40148": {
+    "id": 40148,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "遠方より来たる朋友·其の三",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Receiver of Friends From Afar: Part III",
+    "chapterCount": 1
+   },
+   "40149": {
+    "id": 40149,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "遠方より来たる朋友·其の四",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Receiver of Friends From Afar: Part IV",
+    "chapterCount": 1
+   },
+   "70070": {
+    "id": 70070,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "思いがけない依頼・エピローグ",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Unexpected Commission: Epilogue",
+    "chapterCount": 1
+   },
+   "70090": {
+    "id": 70090,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "お茶会への再招待・アルベド",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Tea Party Re-Invitation: Albedo",
+    "chapterCount": 1
+   },
+   "70500": {
+    "id": 70500,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "からくり調理法·三",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Contraption-Contrived Cooking Course: Part III",
+    "chapterCount": 1
+   },
+   "70501": {
+    "id": 70501,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "からくり調理法·二",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Contraption-Contrived Cooking Course: Part II",
+    "chapterCount": 1
+   },
+   "70502": {
+    "id": 70502,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "酌み交す酔夢",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Of Drink A-Dreaming",
+    "chapterCount": 1
+   },
+   "70510": {
+    "id": 70510,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "酌み交す酔夢·後日談",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Of Drink A-Dreaming: Afterword",
+    "chapterCount": 1
+   },
+   "70515": {
+    "id": 70515,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "からくり械画·終",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Evermotion Mechanical Painting: Finale",
+    "chapterCount": 1
+   },
+   "70533": {
+    "id": 70533,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "からくり械画·七聖編",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Evermotion Mechanical Painting: Invoker",
+    "chapterCount": 1
+   },
+   "71500": {
+    "id": 71500,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "からくり調理法·一",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Contraption-Contrived Cooking Course: Part I",
+    "chapterCount": 1
+   },
+   "71502": {
+    "id": 71502,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "プルシナスパイクの自己循環動作報告·概要",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Spike Self-Circulation Report: Abstract",
+    "chapterCount": 1
+   },
+   "71503": {
+    "id": 71503,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "プルシナスパイクの自己循環動作報告·環境記録",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Spike Self-Circulation Report: Environs Log",
+    "chapterCount": 1
+   },
+   "71507": {
+    "id": 71507,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "プルシナスパイクの自己循環動作報告·概要",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Spike Self-Circulation Report: Abstract",
+    "chapterCount": 1
+   },
+   "71508": {
+    "id": 71508,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "プルシナスパイクの自己循環動作報告·環境記録",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Spike Self-Circulation Report: Environs Log",
+    "chapterCount": 1
+   },
+   "73357": {
+    "id": 73357,
+    "type": "wq",
+    "chapterNum": null,
+    "chapterTitle": "お茶会への再招待・笠っち",
+    "chapterIcon": null,
+    "chapterImageTitle": null,
+    "route": "Tea Party Re-Invitation: Hat Guy",
+    "chapterCount": 1
    }
   }
  }

@@ -1,7 +1,8 @@
 import { App, Modal, Notice, Setting } from "obsidian";
 import { Game, GAME_LABEL, GAMES, Kind, KIND_LABEL, KINDS, NewTaskFields } from "../model";
 import { PeriodicPreset } from "../periodic";
-import { QuestEntry } from "../sources/quests";
+import { matchesWords } from "../search";
+import { QuestEntry, questHaystack } from "../sources/quests";
 import { ImportedEvent } from "../sources/types";
 import { formatShort, parseDate } from "../time";
 
@@ -263,15 +264,13 @@ export class QuestImportModal extends Modal {
 		});
 		const keys = [...new Set(this.entries.map((e) => this.seriesKey(e)))];
 		this.series = keys[0] ?? "";
+		const titles = new Map(this.entries.map((e) => [e.sourceId, e.title]));
 		const count = contentEl.createDiv({ cls: "gtodo-meta" });
 		const list = contentEl.createDiv({ cls: "gtodo-import-list" });
 		const render = () => {
 			list.empty();
-			const q = this.query.trim();
 			const shown = this.entries.filter(
-				(e) =>
-					(!this.series || this.seriesKey(e) === this.series) &&
-					(!q || e.title.includes(q) || e.label.includes(q)),
+				(e) => (!this.series || this.seriesKey(e) === this.series) && matchesWords(questHaystack(e), this.query),
 			);
 			for (const e of shown.slice(0, QUEST_ROW_LIMIT)) {
 				const row = list.createEl("label", { cls: "gtodo-import-row" });
@@ -288,9 +287,15 @@ export class QuestImportModal extends Modal {
 				};
 				const body = row.createDiv();
 				body.createDiv({ text: e.title });
+				const prereqs = e.prereqSourceIds.map((id) => titles.get(id)).filter(Boolean);
 				body.createDiv({
 					cls: "gtodo-meta",
-					text: [this.seriesKey(e), e.label, done ? "登録済み" : refresh ? "登録済み・選ぶと推定値を再計算" : ""]
+					text: [
+						this.seriesKey(e),
+						e.label,
+						prereqs.length ? `前提: ${prereqs.join("、")}` : "",
+						done ? "登録済み" : refresh ? "登録済み・選ぶと推定値を再計算" : "",
+					]
 						.filter(Boolean)
 						.join(" ・ "),
 				});
@@ -312,7 +317,7 @@ export class QuestImportModal extends Modal {
 				});
 			})
 			.addText((t) =>
-				t.setPlaceholder("キーワード").onChange((v) => {
+				t.setPlaceholder("キーワード（空白で AND、-語 で除外、英語名・キャラ名可）").onChange((v) => {
 					this.query = v;
 					render();
 				}),
