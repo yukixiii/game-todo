@@ -238,7 +238,13 @@ export default class GameTodoPlugin extends Plugin {
 		}).open();
 	}
 
-	private fetchJson: FetchJson = async (url, headers) => (await requestUrl({ url, headers })).json;
+	/**
+	 * requestUrl goes through Electron's net module, which honours the HTTP cache. Project Amber sends
+	 * `Cache-Control: max-age=1382400` (16 days), so without this a list fetched before a game update kept
+	 * being served from the local cache. `no-cache` makes Chromium skip its cache and fetch again.
+	 */
+	private fetchJson: FetchJson = async (url, headers) =>
+		(await requestUrl({ url, headers: { "Cache-Control": "no-cache", ...headers } })).json;
 
 	private sources(): Source[] {
 		const out: Source[] = [];
