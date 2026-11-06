@@ -1,6 +1,6 @@
 {
   "name": "game-todo",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Event and quest ToDo for Genshin Impact and Wuthering Waves in Obsidian, with prerequisite-aware scheduling.",
   "main": "main.js",
   "scripts": {
