@@ -61,6 +61,21 @@ describe("plugin with a fake vault", () => {
 		expect(app.files.has("GameTodo/Tasks/原神/週ボス 2026-10-19.md")).toBe(true);
 	});
 
+	it("skips automatic housekeeping when it is turned off for this device", async () => {
+		const { app, plugin } = setup();
+		app.write("GameTodo/Recurring/週ボス.md", "---\ngtodo: recurring\ngame: genshin\nrule: weekly\nestimate: 30\n---\n");
+		const old = "GameTodo/Tasks/原神/週ボス 2026-10-05.md";
+		app.write(old, '---\ngtodo: task\nestimate: 10\ndeadline: 2026-10-12T05:00+09:00\nrecurrenceOf: "[[週ボス]]"\n---\n');
+		plugin.device.autoHousekeeping = false;
+		vi.setSystemTime(jst("2026-10-13T12:00"));
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		await (plugin as any).housekeeping();
+		expect(app.trashed).toEqual([]);
+		expect([...app.files.keys()].sort()).toEqual(["GameTodo/Recurring/週ボス.md", old]);
+		// The manual command still works.
+		expect(await plugin.generateRecurring()).toBe(1);
+	});
+
 	it("keeps completed recurring instances and non-recurring expired tasks", async () => {
 		const { app, plugin } = setup();
 		app.write("GameTodo/Tasks/原神/old event.md", "---\ngtodo: task\nestimate: 10\ndeadline: 2026-10-01T04:59+09:00\n---\n");

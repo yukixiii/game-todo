@@ -245,6 +245,19 @@ export class GameTodoSettingTab extends PluginSettingTab {
 				}),
 			);
 		new Setting(containerEl)
+			.setName("この端末で繰り返しタスクを自動処理する")
+			.setDesc(
+				"起動時と 1 時間ごとに、今期の繰り返しタスクの作成と期限切れの自動削除を行います。この設定は端末ごとに保存され、同期されません。" +
+					"同期プラグインで複数端末を使う場合は、主に使う 1 台だけで ON にしてください（同期が追いつく前に作成・削除するとコンフリクトの原因になります）。" +
+					"OFF でもコマンド「繰り返しタスクを生成」は使えます",
+			)
+			.addToggle((t) =>
+				t.setValue(this.plugin.device.autoHousekeeping).onChange((v) => {
+					this.plugin.device.autoHousekeeping = v;
+					this.plugin.saveDeviceSettings();
+				}),
+			);
+		new Setting(containerEl)
 			.setName("期限切れの繰り返しタスクを自動削除")
 			.setDesc("日課・週課などのインスタンスが期限切れになったらゴミ箱へ移動します")
 			.addToggle((t) =>

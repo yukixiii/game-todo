@@ -1,5 +1,6 @@
 import { debounce, Notice, Plugin, requestUrl } from "obsidian";
 import { buildTaskNote, buildTemplateNote, GAME_LABEL, GAMES, linkTarget, safeFileName, Task } from "./model";
+import { DEFAULT_DEVICE_SETTINGS, DeviceSettings, loadDeviceSettings, saveDeviceSettings } from "./device";
 import { PERIODIC_PRESETS, PeriodicPreset, presetSource } from "./periodic";
 import { currentPeriod, kindForRule, parseRule } from "./recurrence";
 import { TaskRepo } from "./repo";
@@ -21,6 +22,8 @@ import { TodoView, VIEW_TYPE } from "./view/TodoView";
 
 export default class GameTodoPlugin extends Plugin {
 	settings: GameTodoSettings = DEFAULT_SETTINGS;
+	/** Per-device settings (not synced with the vault). */
+	device: DeviceSettings = { ...DEFAULT_DEVICE_SETTINGS };
 	repo!: TaskRepo;
 	result: ScheduleResult | null = null;
 	private tasks: Task[] = [];
@@ -28,6 +31,7 @@ export default class GameTodoPlugin extends Plugin {
 
 	async onload(): Promise<void> {
 		this.settings = mergeSettings(await this.loadData());
+		this.device = loadDeviceSettings(this.deviceKey());
 		this.repo = new TaskRepo(this.app, () => this.settings.rootFolder);
 
 		this.registerView(VIEW_TYPE, (leaf) => new TodoView(leaf, this));
@@ -89,6 +93,15 @@ export default class GameTodoPlugin extends Plugin {
 		this.refresh(false);
 	}
 
+	/** localStorage is shared by every vault opened in this app, so the key includes the vault name. */
+	private deviceKey(): string {
+		return `game-todo:${this.app.vault.getName()}:device`;
+	}
+
+	saveDeviceSettings(): void {
+		saveDeviceSettings(this.deviceKey(), this.device);
+	}
+
 	refresh(notify: boolean): void {
 		this.tasks = this.repo.loadTasks();
 		this.result = schedule(this.tasks, Date.now(), this.settings.capacity, { horizonDays: this.settings.horizonDays });
@@ -123,7 +136,7 @@ export default class GameTodoPlugin extends Plugin {
 
 	/** Generates recurring instances and auto-deletes expired ones. */
 	private async housekeeping(): Promise<void> {
-		if (this.housekeepingRunning) return;
+		if (this.housekeepingRunning || !this.device.autoHousekeeping) return;
 		this.housekeepingRunning = true;
 		try {
 			await this.generateRecurring();
